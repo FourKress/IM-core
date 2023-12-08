@@ -1,0 +1,32 @@
+{
+  "name": "@im-core/components",
+  "version": "1.0.0",
+  "description": "组件库",
+  "author": "wudong",
+  "main": "./dist/@im-core/components.umd.js",
+  "module": "./dist/@im-core/components.mjs",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/@im-core/components.umd.js",
+      "import": "./dist/@im-core/components.mjs",
+      "types": "./dist/src/index.d.ts"
+    }
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@im-core/assets": "workspace:^",
+    "@im-core/utils": "workspace:^"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@im-core/assets",
+  "version": "1.0.0",
+  "description": "图片、样式资源",
+  "author": "wudong",
+  "main": "./dist/@im-core/assets.umd.js",
+  "module": "./dist/@im-core/assets.mjs",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/@im-core/assets.umd.js",
+      "import": "./dist/@im-core/assets.mjs",
+      "types": "./dist/src/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "vite build"
+  }
+}

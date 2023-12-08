@@ -1,0 +1,12 @@
+# .eslintignore
+preview
+node_modules
+dist
+out
+.gitignore
+
+!.eslintrc.js
+!.stylelintrc.cjs
+!.prettierrc.js
+!.lintstagedrc.js
+!.commitlintrc.js
