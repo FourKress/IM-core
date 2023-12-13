@@ -14,8 +14,11 @@ dist-ssr
 coverage
 *.local
 
+/cypress/videos/
+/cypress/screenshots/
+
 # Editor directories and files
-.vscode/*
+.vscode/extensions.json
 !.vscode/extensions.json
 .idea
 *.suo
@@ -23,3 +26,5 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+
+*.tsbuildinfo

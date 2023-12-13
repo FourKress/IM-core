@@ -26,11 +26,8 @@ module.exports = defineConfig({
   extends: [
     'airbnb-base',
     'airbnb-typescript/base',
-    'plugin:vue/vue3-recommended',
     // 'eslint:recommended',
-    // 'plugin:vue/vue3-recommended',
-    // '@electron-toolkit',
-    // '@electron-toolkit/eslint-config-ts/eslint-recommended',
+    'plugin:vue/vue3-recommended',
     // '@vue/eslint-config-typescript/recommended',
     // '@vue/eslint-config-prettier'
   ],
