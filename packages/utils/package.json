@@ -11,7 +11,8 @@
       "require": "./dist/@im-core/utils.umd.js",
       "import": "./dist/@im-core/utils.mjs",
       "types": "./dist/src/index.d.ts"
-    }
+    },
+    "./*": "./*"
   },
   "files": [
     "dist",

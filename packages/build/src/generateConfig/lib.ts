@@ -41,7 +41,7 @@ export function getLib(
   return {
     lib: libOptions,
     // full-min 模式下全量构建，需要混淆代码，生成 sourcemap 文件，且不清空产物目录
-    minify: mode === 'full-min' ? 'esbuild' : true,
+    minify: mode === 'full-min' ? 'esbuild' : false,
     sourcemap: mode === 'full-min',
     emptyOutDir: mode === 'package',
     outDir,

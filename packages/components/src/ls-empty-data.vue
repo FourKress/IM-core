@@ -5,13 +5,102 @@
         :src="imgSrc"
         alt=""
       >
-      <span class="tips">{{ tips }}qwqwe</span>
+      <span class="tips c-warning/20 pb-36 cursor-pointer">{{ tips }}1</span>
       <el-button
         size="small"
         type="primary"
       >
         哈哈
       </el-button>
+
+      <div class="btns">
+        <Button>Button</Button>
+        <Button type="primary">
+          Button
+        </Button>
+        <Button type="success">
+          Button
+        </Button>
+        <Button type="danger">
+          Button
+        </Button>
+        <Button type="warning">
+          Button
+        </Button>
+        <Button type="info">
+          Button
+        </Button>
+      </div>
+      <div class="btns">
+        <Button plain>
+          Button
+        </Button>
+        <Button
+          type="primary"
+          plain
+        >
+          Button
+        </Button>
+        <Button
+          type="success"
+          plain
+        >
+          Button
+        </Button>
+        <Button
+          type="danger"
+          plain
+        >
+          Button
+        </Button>
+        <Button
+          type="warning"
+          plain
+        >
+          Button
+        </Button>
+        <Button
+          type="info"
+          plain
+        >
+          Button
+        </Button>
+      </div>
+      <div class="btns">
+        <Button disabled>
+          Button
+        </Button>
+        <Button
+          type="primary"
+          disabled
+        >
+          Button
+        </Button>
+        <Button
+          type="success"
+          disabled
+        >
+          Button
+        </Button>
+        <Button
+          type="danger"
+          disabled
+        >
+          Button
+        </Button>
+        <Button
+          type="warning"
+          disabled
+        >
+          Button
+        </Button>
+        <Button
+          type="info"
+          disabled
+        >
+          Button
+        </Button>
+      </div>
     </div>
   </div>
 </template>
@@ -19,6 +108,7 @@
 <script setup lang="ts">
 import { hello } from '@im-core/utils';
 import { bg } from '@im-core/assets';
+import { Button } from '@im-core/button';
 
 hello('211212121');
 
@@ -51,6 +141,7 @@ console.log(props, 1);
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
   width: 100%;
   height: 100%;
 
@@ -62,6 +153,7 @@ console.log(props, 1);
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 700px;
     transform: translate(-50%, -50%);
 
     img {
@@ -73,7 +165,8 @@ console.log(props, 1);
     .tips {
       padding-top: 16px;
       font-size: 14px;
-      color: red;
+
+      @apply c-primary;
     }
   }
 }

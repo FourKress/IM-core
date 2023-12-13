@@ -3,6 +3,7 @@ import { defineConfig, externalizeDepsPlugin } from 'electron-vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import wasm from 'vite-plugin-wasm';
+import unocss from 'unocss/vite';
 
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
@@ -39,6 +40,7 @@ export default defineConfig({
       vue(),
       vueJsx(),
       wasm(),
+      unocss(),
       AutoImport({
         resolvers: [ElementPlusResolver()],
       }),

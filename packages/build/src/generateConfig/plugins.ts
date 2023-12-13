@@ -4,7 +4,7 @@ import vue, { Options as VueOptions } from '@vitejs/plugin-vue';
 import replace, { RollupReplaceOptions } from '@rollup/plugin-replace';
 import { PluginOption } from 'vite';
 import { PackageJson } from 'type-fest';
-import { isObjectLike } from '../utils';
+import { isObjectLike } from '@im-core/utils';
 import type { GenerateConfigOptions } from './options';
 import { pluginSetPackageJson } from './pluginSetPackageJson';
 import { pluginMoveDts } from './pluginMoveDts';

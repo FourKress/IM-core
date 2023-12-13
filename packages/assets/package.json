@@ -11,7 +11,8 @@
       "require": "./dist/@im-core/assets.umd.js",
       "import": "./dist/@im-core/assets.mjs",
       "types": "./dist/src/index.d.ts"
-    }
+    },
+    "./*": "./*"
   },
   "files": [
     "dist",

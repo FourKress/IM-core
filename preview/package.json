@@ -25,6 +25,7 @@
     "@electron-toolkit/utils": "^2.0.1",
     "@im-core/assets": "workspace:^",
     "@im-core/components": "workspace:^",
+    "@im-core/styles": "workspace:^",
     "@im-core/utils": "workspace:^",
     "hello-wasm-ls": "^0.4.0",
     "pinia": "^2.1.7",

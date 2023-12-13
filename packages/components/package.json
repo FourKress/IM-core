@@ -11,7 +11,9 @@
       "require": "./dist/@im-core/components.umd.js",
       "import": "./dist/@im-core/components.mjs",
       "types": "./dist/src/index.d.ts"
-    }
+    },
+    "./*": "./*",
+    "./style.css": "./dist/style.css"
   },
   "sideEffects": [
     "**/*.css"
@@ -27,6 +29,7 @@
   },
   "dependencies": {
     "@im-core/assets": "workspace:^",
+    "@im-core/button": "workspace:^",
     "@im-core/utils": "workspace:^"
   }
 }

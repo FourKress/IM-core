@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+import { useTheme, tinyThemeVars, themeVars } from '@im-core/styles';
 import { RouterLink, RouterView } from 'vue-router';
 import { LsEmptyData } from '@im-core/components';
 
@@ -9,12 +11,27 @@ const baz = new wasm.Baz(21);
 console.log(baz.field);
 
 const value = baz.field;
+
+const { setTheme } = useTheme();
+
+const currentGlobalTheme = ref<'default' | 'tiny'>('default');
+
+// 全局主题切换
+function switchGlobalTheme() {
+  if (currentGlobalTheme.value === 'tiny') {
+    currentGlobalTheme.value = 'default';
+    setTheme(themeVars);
+  } else {
+    currentGlobalTheme.value = 'tiny';
+    setTheme(tinyThemeVars);
+  }
+}
 </script>
 
 <template>
   <header>
     <img alt="Vue logo" class="logo" src="@renderer/assets/logo.svg" width="125" height="125" />
-
+    <h3 class="c-primary/10">测试</h3>
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
       {{ value }}
@@ -22,7 +39,7 @@ const value = baz.field;
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <el-button type="primary">哈哈哈</el-button>
-        <LsEmptyData></LsEmptyData>
+        <LsEmptyData @click="switchGlobalTheme"></LsEmptyData>
       </nav>
     </div>
   </header>
