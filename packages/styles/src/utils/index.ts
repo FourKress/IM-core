@@ -1,3 +1,3 @@
-export * from './colors';
-export * from './cssVars';
-export * from './toTheme';
+export * from './colors'
+export * from './cssVars'
+export * from './toTheme'

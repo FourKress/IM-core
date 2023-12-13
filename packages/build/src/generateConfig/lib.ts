@@ -1,12 +1,9 @@
-import { PackageJson } from 'type-fest';
-import { LibraryOptions, LibraryFormats, BuildOptions } from 'vite';
-import { statSync } from 'node:fs';
-import { join } from 'node:path';
-import {
-  absCwd,
-  relCwd,
-} from '../utils';
-import { getOptions, GenerateConfigOptions } from './options';
+import { PackageJson } from 'type-fest'
+import { LibraryOptions, LibraryFormats, BuildOptions } from 'vite'
+import { statSync } from 'node:fs'
+import { join } from 'node:path'
+import { absCwd, relCwd } from '../utils'
+import { getOptions, GenerateConfigOptions } from './options'
 
 /**
  * 获取 build.lib 产物相关配置
@@ -15,17 +12,12 @@ import { getOptions, GenerateConfigOptions } from './options';
  */
 export function getLib(
   packageJson: PackageJson = {},
-  options: GenerateConfigOptions = {},
+  options: GenerateConfigOptions = {}
 ): Pick<BuildOptions, 'lib' | 'minify' | 'sourcemap' | 'outDir' | 'emptyOutDir'> {
-  const {
-    entry,
-    outDir,
-    mode,
-    fileName,
-  } = getOptions(options);
+  const { entry, outDir, mode, fileName } = getOptions(options)
 
   // 文件名称，默认取 package.json 的 name 字段转换成 kebab-case：@openxui/build => openxui-build
-  const finalName = fileName || packageJson.name || '';
+  const finalName = fileName || packageJson.name || ''
 
   const libOptions: LibraryOptions = {
     entry,
@@ -33,10 +25,10 @@ export function getLib(
     formats: mode === 'package' ? ['es', 'umd'] : ['umd'],
     name: finalName,
     fileName: (format) => {
-      const formatName = format as LibraryFormats;
-      return getOutFileName(finalName, formatName, mode);
-    },
-  };
+      const formatName = format as LibraryFormats
+      return getOutFileName(finalName, formatName, mode)
+    }
+  }
 
   return {
     lib: libOptions,
@@ -44,8 +36,8 @@ export function getLib(
     minify: mode === 'full-min' ? 'esbuild' : false,
     sourcemap: mode === 'full-min',
     emptyOutDir: mode === 'package',
-    outDir,
-  };
+    outDir
+  }
 }
 
 /**
@@ -54,30 +46,34 @@ export function getLib(
  * @param format 产物格式
  * @param buildMode 构建模式
  */
-export function getOutFileName(fileName: string, format: LibraryFormats, buildMode: GenerateConfigOptions['mode']) {
-  const formatName = format as ('es' | 'umd');
-  const ext = formatName === 'es' ? '.mjs' : '.umd.js';
-  let tail: string;
+export function getOutFileName(
+  fileName: string,
+  format: LibraryFormats,
+  buildMode: GenerateConfigOptions['mode']
+) {
+  const formatName = format as 'es' | 'umd'
+  const ext = formatName === 'es' ? '.mjs' : '.umd.js'
+  let tail: string
   // 全量构建时，文件名后缀的区别
   if (buildMode === 'full') {
-    tail = '.full.js';
+    tail = '.full.js'
   } else if (buildMode === 'full-min') {
-    tail = '.full.min.js';
+    tail = '.full.min.js'
   } else {
-    tail = ext;
+    tail = ext
   }
-  return `${fileName}${tail}`;
+  return `${fileName}${tail}`
 }
 
 interface EntryInfo {
   /** 子包源码入口文件的绝对路径 */
-  abs: string;
+  abs: string
 
   /** 子包源码入口文件相对于脚本执行位置的路径 */
-  rel: string;
+  rel: string
 
   /** 子包源码入口是不是文件 */
-  isFile: boolean;
+  isFile: boolean
 }
 
 /**
@@ -87,17 +83,17 @@ interface EntryInfo {
  */
 export function resolveEntry(entry: string): EntryInfo {
   /** 入口绝对路径 */
-  const absEntry = absCwd(entry);
+  const absEntry = absCwd(entry)
 
   /** 入口是否为文件 */
-  const isEntryFile = statSync(absEntry).isFile();
+  const isEntryFile = statSync(absEntry).isFile()
 
   /** 入口文件夹绝对路径 */
-  const absEntryFolder = isEntryFile ? join(absEntry, '..') : absEntry;
+  const absEntryFolder = isEntryFile ? join(absEntry, '..') : absEntry
 
   return {
     abs: absEntry,
     rel: relCwd(absEntryFolder),
-    isFile: isEntryFile,
-  };
+    isFile: isEntryFile
+  }
 }

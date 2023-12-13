@@ -1,3 +1,3 @@
-import { generateVueConfig } from '../build/scripts';
+import { generateVueConfig } from '../build/scripts'
 
-export default generateVueConfig();
+export default generateVueConfig()

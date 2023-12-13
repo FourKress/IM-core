@@ -1,5 +1,4 @@
 import { fileURLToPath, URL } from 'node:url'
-// import { join } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -16,11 +15,11 @@ export default defineConfig({
       {
         find: '@',
         replacement: fileURLToPath(new URL('./src', import.meta.url))
+      },
+      {
+        find: /^@im-core\/(.+)$/,
+        replacement: fileURLToPath(new URL('../packages/$1/src', import.meta.url))
       }
-      // {
-      //   find: /^@im-core\/(.+)$/,
-      //   replacement: join(__dirname, '..', 'packages', '$1', 'src'),
-      // },
     ]
   },
   // css: {

@@ -10,13 +10,13 @@ module.exports = {
     'stylelint-config-recommended-vue/scss',
     // 样式属性顺序规则
     'stylelint-config-recess-order',
-    'stylelint-config-standard-vue',
+    'stylelint-config-standard-vue'
   ],
   rules: {
     // 自定义规则集的启用 / 禁用
     // 'stylistic/max-line-length': null,
     'stylistic/max-line-length': 100,
-    'no-duplicate-selectors': null,
+    'no-duplicate-selectors': null
   },
-  customSyntax: 'postcss-html',
-};
+  customSyntax: 'postcss-html'
+}

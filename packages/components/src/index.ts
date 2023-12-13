@@ -1,4 +1,4 @@
-import LsEmptyData from './ls-empty-data.vue';
-import 'virtual:uno.css';
+import LsEmptyData from './ls-empty-data.vue'
+import 'virtual:uno.css'
 
-export { LsEmptyData };
+export { LsEmptyData }

@@ -1,118 +1,44 @@
 <template>
   <div class="empty-data">
     <div class="empty-container flex flex-col flex-items-center justify-center bg-warning/40">
-      <img
-        :src="imgSrc"
-        alt=""
-      >
-      <span class="tips c-warning/20 pb-36 cursor-pointer">{{ tips }}1</span>
-      <el-button
-        size="small"
-        type="primary"
-      >
-        哈哈
-      </el-button>
+      <img :src="imgSrc" alt="" />
+      <span class="tips c-warning/90 pb-36 cursor-pointer">{{ tips }}1</span>
+      <el-button size="small" type="primary"> 测试恶趣味 </el-button>
 
       <div class="btns">
-        <Button class="c-primary">
-          Button
-        </Button>
-        <Button type="primary">
-          Button
-        </Button>
-        <Button type="success">
-          Button
-        </Button>
-        <Button type="danger">
-          Button
-        </Button>
-        <Button type="warning">
-          Button
-        </Button>
-        <Button type="info">
-          Button
-        </Button>
+        <Button class="c-primary"> Button </Button>
+        <Button type="primary"> Button </Button>
+        <Button type="success"> Button </Button>
+        <Button type="danger"> Button </Button>
+        <Button type="warning"> Button </Button>
+        <Button type="info"> Button </Button>
       </div>
       <div class="btns">
-        <Button plain>
-          Button
-        </Button>
-        <Button
-          type="primary"
-          plain
-        >
-          Button
-        </Button>
-        <Button
-          type="success"
-          plain
-        >
-          Button
-        </Button>
-        <Button
-          type="danger"
-          plain
-        >
-          Button
-        </Button>
-        <Button
-          type="warning"
-          plain
-        >
-          Button
-        </Button>
-        <Button
-          type="info"
-          plain
-        >
-          Button
-        </Button>
+        <Button plain> Button </Button>
+        <Button type="primary" plain> Button </Button>
+        <Button type="success" plain> Button </Button>
+        <Button type="danger" plain> Button </Button>
+        <Button type="warning" plain> Button </Button>
+        <Button type="info" plain> Button </Button>
       </div>
       <div class="btns">
-        <Button disabled>
-          Button
-        </Button>
-        <Button
-          type="primary"
-          disabled
-        >
-          Button
-        </Button>
-        <Button
-          type="success"
-          disabled
-        >
-          Button
-        </Button>
-        <Button
-          type="danger"
-          disabled
-        >
-          Button
-        </Button>
-        <Button
-          type="warning"
-          disabled
-        >
-          Button
-        </Button>
-        <Button
-          type="info"
-          disabled
-        >
-          Button
-        </Button>
+        <Button disabled> Button </Button>
+        <Button type="primary" disabled> Button </Button>
+        <Button type="success" disabled> Button </Button>
+        <Button type="danger" disabled> Button </Button>
+        <Button type="warning" disabled> Button </Button>
+        <Button type="info" disabled> Button </Button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { hello } from '@im-core/utils';
-import { bg } from '@im-core/assets';
-import { Button } from '@im-core/button';
+import { hello } from '@im-core/utils'
+import { bg } from '@im-core/assets'
+import { Button } from '@im-core/button'
 
-hello('211212121');
+hello('211212121')
 
 // console.log(fn())
 // console.log(useLodash())
@@ -126,16 +52,16 @@ hello('211212121');
 // });
 
 interface Props {
-  imgSrc?: string;
-  tips?: string;
+  imgSrc?: string
+  tips?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
   imgSrc: bg,
-  tips: '暂无数122223据',
-});
+  tips: '暂无数122223据'
+})
 
-console.log(props, 1);
+console.log(props, 1)
 </script>
 
 <style scoped lang="scss">

@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useTheme, tinyThemeVars, themeVars } from '@im-core/styles'
 import { RouterLink, RouterView } from 'vue-router'
-// import { LsEmptyData } from '@im-core/components'
+import { LsEmptyData } from '@im-core/components'
 
 import * as wasm from 'hello-wasm-ls'
 import { Button } from '@im-core/button'
@@ -34,35 +34,35 @@ function switchGlobalTheme() {
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
     <div class="wrapper">
       {{ value }}
+      <div class="btns">
+        <Button class="c-primary"> Button </Button>
+        <Button type="primary"> Button </Button>
+        <Button type="success"> Button </Button>
+        <Button type="danger"> Button </Button>
+        <Button type="warning"> Button </Button>
+        <Button type="info"> Button </Button>
+      </div>
+      <div class="btns">
+        <Button plain> Button </Button>
+        <Button type="primary" plain> Button </Button>
+        <Button type="success" plain> Button </Button>
+        <Button type="danger" plain> Button </Button>
+        <Button type="warning" plain> Button </Button>
+        <Button type="info" plain> Button </Button>
+      </div>
+      <div class="btns">
+        <Button disabled> Button </Button>
+        <Button type="primary" disabled> Button </Button>
+        <Button type="success" disabled> Button </Button>
+        <Button type="danger" disabled> Button </Button>
+        <Button type="warning" disabled> Button </Button>
+        <Button type="info" disabled> Button </Button>
+      </div>
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <el-button type="primary">哈哈哈</el-button>
-        <!--        <LsEmptyData @click="switchGlobalTheme"></LsEmptyData>-->
-        <div class="btns">
-          <Button class="c-primary"> Button </Button>
-          <Button type="primary"> Button </Button>
-          <Button type="success"> Button </Button>
-          <Button type="danger"> Button </Button>
-          <Button type="warning"> Button </Button>
-          <Button type="info"> Button </Button>
-        </div>
-        <div class="btns">
-          <Button plain> Button </Button>
-          <Button type="primary" plain> Button </Button>
-          <Button type="success" plain> Button </Button>
-          <Button type="danger" plain> Button </Button>
-          <Button type="warning" plain> Button </Button>
-          <Button type="info" plain> Button </Button>
-        </div>
-        <div class="btns">
-          <Button disabled> Button </Button>
-          <Button type="primary" disabled> Button </Button>
-          <Button type="success" disabled> Button </Button>
-          <Button type="danger" disabled> Button </Button>
-          <Button type="warning" disabled> Button </Button>
-          <Button type="info" disabled> Button </Button>
-        </div>
+        <LsEmptyData @click="switchGlobalTheme"></LsEmptyData>
       </nav>
     </div>
   </header>

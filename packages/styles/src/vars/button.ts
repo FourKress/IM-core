@@ -1,5 +1,5 @@
-import { getCssVar, cssVarToRgba } from '../utils';
-import { ThemeCssVarsConfig } from './theme';
+import { getCssVar, cssVarToRgba } from '../utils'
+import { ThemeCssVarsConfig } from './theme'
 
 /** 按钮组件的主题变量定义 */
 export const buttonVars = {
@@ -16,8 +16,8 @@ export const buttonVars = {
   'button-disabled-bg-color': cssVarToRgba<ThemeCssVarsConfig>('color-card'),
   'button-disabled-border-color': cssVarToRgba<ThemeCssVarsConfig>('color-bd_light'),
   'button-padding-x': getCssVar<ThemeCssVarsConfig>('spacing-md'),
-  'button-padding-y': getCssVar<ThemeCssVarsConfig>('spacing-xs'),
-};
+  'button-padding-y': getCssVar<ThemeCssVarsConfig>('spacing-xs')
+}
 
 /** 按钮组件主题变量类型 */
-export type ButtonCssVarsConfig = Partial<typeof buttonVars>;
+export type ButtonCssVarsConfig = Partial<typeof buttonVars>

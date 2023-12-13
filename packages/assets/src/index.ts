@@ -1,3 +1,3 @@
-import bg from './images/index.png';
+import bg from './images/index.png'
 
-export { bg };
+export { bg }

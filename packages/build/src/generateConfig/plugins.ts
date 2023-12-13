@@ -1,13 +1,13 @@
-import inspect, { Options as InspectOptions } from 'vite-plugin-inspect';
-import { visualizer, PluginVisualizerOptions } from 'rollup-plugin-visualizer';
-import vue, { Options as VueOptions } from '@vitejs/plugin-vue';
-import replace, { RollupReplaceOptions } from '@rollup/plugin-replace';
-import { PluginOption } from 'vite';
-import { PackageJson } from 'type-fest';
-import { isObjectLike } from '@im-core/utils';
-import type { GenerateConfigOptions } from './options';
-import { pluginSetPackageJson } from './pluginSetPackageJson';
-import { pluginMoveDts } from './pluginMoveDts';
+import inspect, { Options as InspectOptions } from 'vite-plugin-inspect'
+import { visualizer, PluginVisualizerOptions } from 'rollup-plugin-visualizer'
+import vue, { Options as VueOptions } from '@vitejs/plugin-vue'
+import replace, { RollupReplaceOptions } from '@rollup/plugin-replace'
+import { PluginOption } from 'vite'
+import { PackageJson } from 'type-fest'
+import { isObjectLike } from '@im-core/utils'
+import type { GenerateConfigOptions } from './options'
+import { pluginSetPackageJson } from './pluginSetPackageJson'
+import { pluginMoveDts } from './pluginMoveDts'
 
 /** 预设插件相关配置选项 */
 export interface GenerateConfigPluginsOptions {
@@ -18,25 +18,25 @@ export interface GenerateConfigPluginsOptions {
    * - Options 启用该插件，应用具体配置
    * @default false
    */
-  pluginVue?: boolean | VueOptions;
+  pluginVue?: boolean | VueOptions
 
   /**
    * 是否启用 vite-plugin-inspect 进行产物分析。
    * @default false
    */
-  pluginInspect?: boolean | InspectOptions;
+  pluginInspect?: boolean | InspectOptions
 
   /**
    * 是否启用 rollup-plugin-visualizer 进行产物分析。
    * @default false
    */
-  pluginVisualizer?: boolean | PluginVisualizerOptions;
+  pluginVisualizer?: boolean | PluginVisualizerOptions
 
   /**
    * 是否启用 @rollup/plugin-replace 进行产物内容替换。
    * @default false
    */
-  pluginReplace?: boolean | RollupReplaceOptions;
+  pluginReplace?: boolean | RollupReplaceOptions
 }
 
 /**
@@ -44,16 +44,16 @@ export interface GenerateConfigPluginsOptions {
  * @param options 预设插件相关配置选项
  */
 export function getPresetPlugins(options: GenerateConfigPluginsOptions = {}) {
-  const result: PluginOption[] = [];
+  const result: PluginOption[] = []
 
   result.push(
     getPresetPlugin(options, 'pluginVue', vue),
     getPresetPlugin(options, 'pluginInspect', inspect),
     getPresetPlugin(options, 'pluginVisualizer', visualizer),
-    getPresetPlugin(options, 'pluginReplace', replace),
-  );
+    getPresetPlugin(options, 'pluginReplace', replace)
+  )
 
-  return result;
+  return result
 }
 
 /**
@@ -61,25 +61,22 @@ export function getPresetPlugins(options: GenerateConfigPluginsOptions = {}) {
  * @param packageJson package.json 文件内容
  * @param options 构建选项
  */
-export function getPlugins(
-  packageJson: PackageJson = {},
-  options: GenerateConfigOptions = {},
-) {
-  const { mode, dts } = options;
+export function getPlugins(packageJson: PackageJson = {}, options: GenerateConfigOptions = {}) {
+  const { mode, dts } = options
 
-  const result = getPresetPlugins(options);
+  const result = getPresetPlugins(options)
 
   if (mode === 'package') {
     // 常规构建的情况下，集成自定义插件，回写 package.json 的入口字段
-    result.push(pluginSetPackageJson(packageJson, options));
+    result.push(pluginSetPackageJson(packageJson, options))
 
     if (dts) {
       // 常规构建的情况下，集成自定义插件，移动 d.ts 产物
-      result.push(pluginMoveDts(options));
+      result.push(pluginMoveDts(options))
     }
   }
 
-  return result;
+  return result
 }
 
 /**
@@ -93,14 +90,12 @@ export function getPresetPlugin<K extends keyof GenerateConfigPluginsOptions>(
   options: GenerateConfigPluginsOptions,
   key: K,
   plugin: (...args: any[]) => PluginOption,
-  defaultOptions?: GenerateConfigPluginsOptions[K],
+  defaultOptions?: GenerateConfigPluginsOptions[K]
 ) {
-  const value = options[key];
+  const value = options[key]
   if (!value) {
-    return null;
+    return null
   }
 
-  return plugin(
-    isObjectLike(value) ? value : defaultOptions,
-  );
+  return plugin(isObjectLike(value) ? value : defaultOptions)
 }

@@ -1,2 +1,2 @@
-export * from './generateConfig';
-export * from './utils';
+export * from './generateConfig'
+export * from './utils'

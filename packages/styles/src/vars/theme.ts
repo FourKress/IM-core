@@ -27,8 +27,8 @@ export const themeColors = {
   'color-bd_base': '#dcdfe6',
   'color-bd_light': '#dfe1e6',
   'color-bd_lighter': '#ebeff5',
-  'color-bd_lightest': '#f2f6fc',
-};
+  'color-bd_lightest': '#f2f6fc'
+}
 
 /**
  * 需要生成色阶的颜色
@@ -40,8 +40,8 @@ export const themeColorLevelsEnabledKeys: (keyof typeof themeColors)[] = [
   'color-success',
   'color-warning',
   'color-danger',
-  'color-info',
-];
+  'color-info'
+]
 
 /** 基础边距主题变量 */
 export const themeSpacing = {
@@ -49,14 +49,14 @@ export const themeSpacing = {
   'spacing-sm': '12px',
   'spacing-md': '16px',
   'spacing-lg': '24px',
-  'spacing-xl': '32px',
-};
+  'spacing-xl': '32px'
+}
 
 /** 基础主题变量 */
 export const themeVars = {
   ...themeColors,
-  ...themeSpacing,
-};
+  ...themeSpacing
+}
 
 /** 基础主题变量类型 */
-export type ThemeCssVarsConfig = Partial<typeof themeVars>;
+export type ThemeCssVarsConfig = Partial<typeof themeVars>

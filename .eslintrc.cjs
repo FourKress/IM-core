@@ -2,8 +2,8 @@
 
 require('@rushstack/eslint-patch/modern-module-resolution')
 
-const { defineConfig } = require('eslint-define-config');
-const path = require('path');
+const { defineConfig } = require('eslint-define-config')
+const path = require('path')
 
 module.exports = defineConfig({
   // 指定此配置为根级配置，eslint 不会继续向上层寻找
@@ -13,7 +13,7 @@ module.exports = defineConfig({
   env: {
     browser: true,
     es2022: true,
-    node: true,
+    node: true
   },
 
   // 设置自定义全局变量，不会被特定的规则(如 no-undef)限制。
@@ -27,7 +27,7 @@ module.exports = defineConfig({
     'airbnb-base',
     'airbnb-typescript/base',
     // 'eslint:recommended',
-    'plugin:vue/vue3-recommended',
+    'plugin:vue/vue3-recommended'
     // '@vue/eslint-config-typescript/recommended',
     // '@vue/eslint-config-prettier'
   ],
@@ -50,7 +50,7 @@ module.exports = defineConfig({
     // TypeScript 解析器也要负责 vue 文件的 <script>
     extraFileExtensions: ['.vue'],
 
-    tsconfigRootDir: __dirname,
+    tsconfigRootDir: __dirname
   },
 
   // 在已有规则及基础上微调修改
@@ -75,24 +75,24 @@ module.exports = defineConfig({
     // 换行符不作约束
     'linebreak-style': 'off',
 
-    "object-curly-newline": ["error", {
-      "ObjectExpression": { "multiline": true },
-      "ObjectPattern": { "minProperties": 3, "multiline": true }
-    }],
-    "@typescript-eslint/no-use-before-define": 0
+    'object-curly-newline': [
+      'error',
+      {
+        ObjectExpression: { multiline: true },
+        ObjectPattern: { minProperties: 3, multiline: true }
+      }
+    ],
+    '@typescript-eslint/no-use-before-define': 0
   },
 
   // 文件级别的重写
   overrides: [
     // 对于 vite 和 vitest 的配置文件，不对 console.log 进行错误提示
     {
-      files: [
-        '**/vite.config.*',
-        '**/vitest.config.*',
-      ],
+      files: ['**/vite.config.*', '**/vitest.config.*'],
       rules: {
-        'no-console': 'off',
-      },
-    },
-  ],
-});
+        'no-console': 'off'
+      }
+    }
+  ]
+})

@@ -1,3 +1,3 @@
-import { generateVueConfig } from '../build/scripts';
+import { generateVueConfig } from '../build/scripts'
 
-export default generateVueConfig({ presetOpenxuiOptions: { include: ['button'] } });
+export default generateVueConfig({ presetOpenxuiOptions: { include: ['button'] } })
