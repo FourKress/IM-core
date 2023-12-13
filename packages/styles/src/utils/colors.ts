@@ -3,10 +3,10 @@ interface RGBAColor {
   /** r、g、b、a 值 */
   args: [number, number, number, number];
 
-  /** 获取 rgb 值，例如：255,255,255 */
+  /** 获取 rgb 值，例如：255 255 255 */
   get rgbTxt(): string;
 
-  /** 获取 rgba 完整表示，例如：rgba(255,255,255,1) */
+  /** 获取 rgba 完整表示，例如：rgba(255 255 255 / 1) */
   get rgba(): string;
 }
 
@@ -76,10 +76,10 @@ function createRgbaColor(r: number, g: number, b: number, a: number = 1): RGBACo
     args: [r, g, b, a],
     get rgbTxt() {
       const [rr, gg, bb] = this.args;
-      return `${rr}, ${gg}, ${bb}`;
+      return `${rr} ${gg} ${bb}`;
     },
     get rgba() {
-      return `rgba(${this.rgbTxt}, ${this.args[3] || 1})`;
+      return `rgba(${this.rgbTxt} / ${this.args[3] || 1})`;
     },
   };
 }
@@ -113,7 +113,7 @@ export function generateRgbColorLevels(color: RGBAColor, levels: number = 9) {
     dark: <RGBAColor[]>[],
   };
 
-  if (color.rgbTxt === '0, 0, 0' || color.rgbTxt === '255, 255, 255') {
+  if (color.rgbTxt === '0 0 0' || color.rgbTxt === '255 255 255') {
     return result;
   }
 

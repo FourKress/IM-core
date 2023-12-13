@@ -1,6 +1,6 @@
 <template>
   <div class="empty-data">
-    <div class="empty-container">
+    <div class="empty-container flex flex-col flex-items-center justify-center bg-warning/40">
       <img
         :src="imgSrc"
         alt=""
@@ -14,7 +14,9 @@
       </el-button>
 
       <div class="btns">
-        <Button>Button</Button>
+        <Button class="c-primary">
+          Button
+        </Button>
         <Button type="primary">
           Button
         </Button>
@@ -149,11 +151,9 @@ console.log(props, 1);
     position: absolute;
     top: 50%;
     left: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
     width: 700px;
+    height: 500px;
     transform: translate(-50%, -50%);
 
     img {
@@ -165,8 +165,6 @@ console.log(props, 1);
     .tips {
       padding-top: 16px;
       font-size: 14px;
-
-      @apply c-primary;
     }
   }
 }

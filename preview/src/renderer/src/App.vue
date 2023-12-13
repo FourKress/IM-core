@@ -108,8 +108,4 @@ nav a:first-of-type {
     text-align: left;
   }
 }
-
-:root {
-  --el-color-primary: red !important;
-}
 </style>

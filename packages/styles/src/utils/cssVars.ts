@@ -69,7 +69,7 @@ export function generateCssVars<
     const cssKey = `--${prefix}${key}`;
     const valueToRgba = toRgba(value);
 
-    // 颜色 CSS 变量用 rgb 字符串(255,255,255)的方式表示，非颜色 CSS 变量不做转化。
+    // 颜色 CSS 变量用 rgb 字符串(255 255 255)的方式表示，非颜色 CSS 变量不做转化。
     const finalValue = valueToRgba ? valueToRgba.rgbTxt : value;
     result[cssKey] = finalValue;
 
@@ -101,16 +101,16 @@ export function cssVarsToString(cssVars: Record<string, any>, selector: string =
   return result;
 }
 
-/** 获取 css 变量字符串 var(xxxxx) */
+/** 获取 css 变量字符串 var(xxx) */
 export function getCssVar<
   T extends Record<string, any> = Record<string, any>,
 >(name: keyof T, prefix: string = DEFAULT_PREFIX) {
   return `var(--${prefix}${name as string})`;
 }
 
-/** 将颜色 css 变量转换为有效颜色：255,255,255 => rgba(255,255,255,1) */
+/** 将颜色 css 变量转换为有效颜色：255 255 255 => rgba(255 255 255 / 1) */
 export function cssVarToRgba<
   T extends Record<string, any> = Record<string, any>,
 >(name: keyof T, alpha: number = 1, prefix: string = DEFAULT_PREFIX) {
-  return `rgba(${getCssVar(name, prefix)},${alpha})`;
+  return `rgba(${getCssVar(name, prefix)} / ${alpha})`;
 }
