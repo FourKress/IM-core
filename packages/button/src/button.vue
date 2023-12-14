@@ -1,5 +1,7 @@
 <script setup lang="ts">
-// packages/button/src/button.vue
+defineOptions({
+  name: 'ImButton'
+})
 import { computed } from 'vue'
 import { defaultButtonProps, ButtonProps } from './button'
 

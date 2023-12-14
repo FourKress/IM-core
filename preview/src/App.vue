@@ -4,6 +4,7 @@ import { useTheme, tinyThemeVars, themeVars } from '@im-core/styles'
 import { RouterLink, RouterView } from 'vue-router'
 import { LsEmptyData } from '@im-core/components'
 import * as wasm from 'hello-wasm-ls'
+import { Button } from '@im-core/button'
 
 const baz = new wasm.Baz(121)
 console.log(baz.field)
@@ -44,6 +45,14 @@ function switchGlobalTheme() {
       width="125"
       height="125"
     />
+    <div class="btns">
+      <Button class="c-primary"> Button </Button>
+      <Button type="primary"> Button </Button>
+      <Button type="success"> Button </Button>
+      <Button type="danger"> Button </Button>
+      <Button type="warning"> Button </Button>
+      <Button type="info"> Button </Button>
+    </div>
     <div class="wrapper">
       {{ value }}
       <el-input v-model="input" placeholder="Please input" />
