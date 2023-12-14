@@ -2,7 +2,7 @@ import { mergeConfig, UserConfig } from 'vite'
 import { presetUno, PresetUnoOptions } from 'unocss/preset-uno'
 import unocss from 'unocss/vite'
 import transformerDirectives from '@unocss/transformer-directives'
-import { openxuiPreset, OpenxuiPresetOptions } from '../../styles/src/unoPreset'
+import { ImCorePreset, ImCorePresetOptions } from '../../styles/src/unoPreset'
 import { generateConfig } from './common'
 import { absCwd, relCwd, GenerateConfigOptions } from '../src'
 
@@ -15,14 +15,14 @@ export interface GenerateVueConfigOptions extends GenerateConfigOptions {
   presetUnoOptions?: PresetUnoOptions
 
   /** 传递给组件库 UnoCSS 预设的选项 */
-  presetOpenxuiOptions?: OpenxuiPresetOptions
+  presetImCoreOptions?: ImCorePresetOptions
 }
 
 export async function generateVueConfig(
   customOptions?: GenerateVueConfigOptions,
   viteConfig?: UserConfig
 ) {
-  const { pluginUno = true, presetOpenxuiOptions, presetUnoOptions } = customOptions || {}
+  const { pluginUno = true, presetImCoreOptions, presetUnoOptions } = customOptions || {}
 
   const configPreset: UserConfig = {
     plugins: [
@@ -37,7 +37,7 @@ export async function generateVueConfig(
                 ...presetUnoOptions
               }),
               // 集成组件库 UnoCSS 预设，组件的部分样式内容交由 UnoCSS 生成。
-              openxuiPreset(presetOpenxuiOptions)
+              ImCorePreset(presetImCoreOptions)
             ],
             transformers: [
               // 支持在 css 中使用 @apply 语法聚合多个原子类

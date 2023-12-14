@@ -1,6 +1,6 @@
-import { OpenxuiCssVarsConfig } from '../../vars'
+import { ImCoreCssVarsConfig } from '../../vars'
 
-export const tinyThemeVars: OpenxuiCssVarsConfig = {
+export const tinyThemeVars: ImCoreCssVarsConfig = {
   'color-primary': '#5e7ce0',
   'color-success': '#50d4ab',
   'color-warning': '#fa9841',

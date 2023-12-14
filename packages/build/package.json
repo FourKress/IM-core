@@ -25,7 +25,7 @@
   "dependencies": {
     "@im-core/utils": "workspace:^",
     "@rollup/plugin-replace": "^5.0.5",
-    "@vitejs/plugin-vue": "^4.3.1",
+    "@vitejs/plugin-vue": "^4.5.2",
     "rollup-plugin-visualizer": "^5.10.0",
     "type-fest": "^4.8.3",
     "typescript": "^5.1.6",

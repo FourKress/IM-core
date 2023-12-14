@@ -11,7 +11,7 @@ const configMaps = {
 type ConfigKeys = keyof typeof configMaps
 
 /** 组件库预设选项 */
-export interface OpenxuiPresetOptions {
+export interface ImCorePresetOptions {
   /** 指定集成哪些组件的 UnoCSS 预设，不设置时默认全部集成 */
   include?: ConfigKeys[]
 
@@ -20,7 +20,7 @@ export interface OpenxuiPresetOptions {
 }
 
 /** 组件库预设 */
-export function openxuiPreset(options: OpenxuiPresetOptions = {}): Preset {
+export function ImCorePreset(options: ImCorePresetOptions = {}): Preset {
   const { include = Object.keys(configMaps) as ConfigKeys[], exclude = [] } = options
 
   // 根据 include 和 exclude 选项决定哪些组件的 UnoCSS 预设将要被集成
@@ -38,7 +38,7 @@ export function openxuiPreset(options: OpenxuiPresetOptions = {}): Preset {
   const mergedConfig = mergeConfigs(configs)
 
   return {
-    name: 'openxui-preset',
+    name: 'ImCore-preset',
     ...mergedConfig
   }
 }
