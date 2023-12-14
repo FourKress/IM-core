@@ -3,11 +3,14 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import wasm from 'vite-plugin-wasm'
+import topLevelAwait from 'vite-plugin-top-level-await'
 import unocss from 'unocss/vite'
 
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+
+// const wasm = require('vite-plugin-wasm')
 
 export default defineConfig({
   resolve: {
@@ -22,17 +25,18 @@ export default defineConfig({
       }
     ]
   },
-  // css: {
-  //   preprocessorOptions: {
-  //     scss: {
-  //       additionalData: `@use "@/assets/theme.scss" as *;`,
-  //     },
-  //   },
-  // },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@/assets/theme.scss" as *;`
+      }
+    }
+  },
   plugins: [
     vue(),
     vueJsx(),
     wasm(),
+    topLevelAwait(),
     unocss(),
     AutoImport({
       resolvers: [ElementPlusResolver()]

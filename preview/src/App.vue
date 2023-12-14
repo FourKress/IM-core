@@ -3,14 +3,14 @@ import { ref } from 'vue'
 import { useTheme, tinyThemeVars, themeVars } from '@im-core/styles'
 import { RouterLink, RouterView } from 'vue-router'
 import { LsEmptyData } from '@im-core/components'
-
 import * as wasm from 'hello-wasm-ls'
-import { Button } from '@im-core/button'
 
-const baz = new wasm.Baz(21)
+const baz = new wasm.Baz(121)
 console.log(baz.field)
 
 const value = baz.field
+
+const input = ref('')
 
 const { setTheme } = useTheme()
 
@@ -25,44 +25,33 @@ function switchGlobalTheme() {
     currentGlobalTheme.value = 'tiny'
     setTheme(tinyThemeVars)
   }
+
+  const el = document.documentElement
+  const myColorPrimary = getComputedStyle(el).getPropertyValue(`--op-color-primary`)
+  console.log(`rgba(${myColorPrimary} / 1)`)
+  el.style.setProperty('--el-color-primary', `rgba(${myColorPrimary} / 1)`)
 }
 </script>
 
 <template>
   <header>
-    <h3 class="c-primary/50 font-bold">测试</h3>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <h3 class="c-primary font-bold">测试</h3>
+    <img
+      @click="switchGlobalTheme"
+      alt="Vue logo"
+      class="logo"
+      src="@/assets/logo.svg"
+      width="125"
+      height="125"
+    />
     <div class="wrapper">
       {{ value }}
-      <div class="btns">
-        <Button class="c-primary"> Button </Button>
-        <Button type="primary"> Button </Button>
-        <Button type="success"> Button </Button>
-        <Button type="danger"> Button </Button>
-        <Button type="warning"> Button </Button>
-        <Button type="info"> Button </Button>
-      </div>
-      <div class="btns">
-        <Button plain> Button </Button>
-        <Button type="primary" plain> Button </Button>
-        <Button type="success" plain> Button </Button>
-        <Button type="danger" plain> Button </Button>
-        <Button type="warning" plain> Button </Button>
-        <Button type="info" plain> Button </Button>
-      </div>
-      <div class="btns">
-        <Button disabled> Button </Button>
-        <Button type="primary" disabled> Button </Button>
-        <Button type="success" disabled> Button </Button>
-        <Button type="danger" disabled> Button </Button>
-        <Button type="warning" disabled> Button </Button>
-        <Button type="info" disabled> Button </Button>
-      </div>
+      <el-input v-model="input" placeholder="Please input" />
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <el-button type="primary">哈哈哈</el-button>
-        <LsEmptyData @click="switchGlobalTheme"></LsEmptyData>
+        <!--        <LsEmptyData></LsEmptyData>-->
       </nav>
     </div>
   </header>
