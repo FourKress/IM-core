@@ -16,7 +16,12 @@ module.exports = {
     // 自定义规则集的启用 / 禁用
     // 'stylistic/max-line-length': null,
     'stylistic/max-line-length': 100,
-    'no-duplicate-selectors': null
+    'no-duplicate-selectors': null,
+
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "selector-class-pattern": null,
+    "scss/dollar-variable-pattern": null,
   },
   customSyntax: 'postcss-html'
 }

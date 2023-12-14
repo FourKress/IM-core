@@ -1,7 +1,7 @@
 import { PluginOption } from 'vite'
 import { PackageJson } from 'type-fest'
 import { basename } from 'node:path'
-import { isObjectLike, isFunction } from '@im-core/utils'
+import { isObjectLike, isFunction } from '../utils'
 import { absCwd, relCwd, writeJsonFile } from '../utils'
 import { getOutFileName, resolveEntry } from './lib'
 import { getOptions, GenerateConfigOptions } from './options'

@@ -1,3 +1,49 @@
+<script setup lang="ts">
+defineOptions({
+  name: 'LsButton'
+})
+import { computed } from 'vue'
+
+interface Props {
+  /** 按钮的类型 */
+  type?: '' | 'primary' | 'success' | 'info' | 'warning' | 'danger'
+  /** 按钮是否为朴素样式 */
+  plain?: boolean
+  /** 按钮是否不可用 */
+  disabled?: boolean
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  type: '',
+  plain: false,
+  disabled: false
+})
+
+const classes = computed(() => {
+  const result: string[] = []
+  if (props.type) {
+    result.push(`op-button--${props.type}`)
+  }
+
+  if (props.plain) {
+    result.push('op-button--plain')
+  }
+
+  if (props.disabled) {
+    result.push('op-button--disabled')
+  }
+
+  return result
+})
+</script>
+
+<template>
+  <button class="op-button" :class="classes">
+    <slot />
+  </button>
+</template>
+
+<style scoped lang="scss">
 $button-types: primary, success, warning, danger, info;
 
 @mixin button-type-styles() {
@@ -80,7 +126,6 @@ $button-types: primary, success, warning, danger, info;
 
   &.op-button--disabled,
   &.op-button--disabled:hover,
-  /* stylelint-disable-next-line selector-class-pattern */
   &.op-button--disabled:active {
     color: var(--op-button-disabled-color);
     cursor: not-allowed;
@@ -88,3 +133,4 @@ $button-types: primary, success, warning, danger, info;
     border-color: var(--op-button-disabled-border-color);
   }
 }
+</style>

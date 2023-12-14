@@ -23,7 +23,6 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@im-core/utils": "workspace:^",
     "@rollup/plugin-replace": "^5.0.5",
     "@vitejs/plugin-vue": "^4.5.2",
     "rollup-plugin-visualizer": "^5.10.0",

@@ -29,7 +29,6 @@
   },
   "dependencies": {
     "@im-core/assets": "workspace:^",
-    "@im-core/button": "workspace:^",
     "@im-core/utils": "workspace:^"
   }
 }
