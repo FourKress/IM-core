@@ -3,18 +3,18 @@ $button-types: primary, success, warning, danger, info;
 @mixin button-type-styles() {
   @each $type in $button-types {
     &.op-button--#{$type} {
-      --op-button-color: rgb(var(--op-color-reverse));
-      --op-button-bg-color: rgb(var(--op-color-#{$type}));
-      --op-button-border-color: rgb(var(--op-color-#{$type}));
-      --op-button-hover-color: rgb(var(--op-color-reverse));
-      --op-button-hover-bg-color: rgb(var(--op-color-#{$type}-light-3));
-      --op-button-hover-border-color: rgb(var(--op-color-#{$type}-light-3));
-      --op-button-active-color: rgb(var(--op-color-reverse));
-      --op-button-active-bg-color: rgb(var(--op-color-#{$type}-dark-2));
-      --op-button-active-border-color: rgb(var(--op-color-#{$type}-dark-2));
-      --op-button-disabled-color: rgb(var(--op-color-reverse));
-      --op-button-disabled-bg-color: rgb(var(--op-color-#{$type}-light-5));
-      --op-button-disabled-border-color: rgb(var(--op-color-#{$type}-light-5));
+      --ls-button-color: rgb(var(--ls-color-reverse));
+      --ls-button-bg-color: rgb(var(--ls-color-#{$type}));
+      --ls-button-border-color: rgb(var(--ls-color-#{$type}));
+      --ls-button-hover-color: rgb(var(--ls-color-reverse));
+      --ls-button-hover-bg-color: rgb(var(--ls-color-#{$type}-light-3));
+      --ls-button-hover-border-color: rgb(var(--ls-color-#{$type}-light-3));
+      --ls-button-active-color: rgb(var(--ls-color-reverse));
+      --ls-button-active-bg-color: rgb(var(--ls-color-#{$type}-dark-2));
+      --ls-button-active-border-color: rgb(var(--ls-color-#{$type}-dark-2));
+      --ls-button-disabled-color: rgb(var(--ls-color-reverse));
+      --ls-button-disabled-bg-color: rgb(var(--ls-color-#{$type}-light-5));
+      --ls-button-disabled-border-color: rgb(var(--ls-color-#{$type}-light-5));
     }
   }
 }
@@ -22,15 +22,15 @@ $button-types: primary, success, warning, danger, info;
 @mixin button-plain-styles() {
   @each $type in $button-types {
     &.op-button--#{$type} {
-      --op-button-color: rgb(var(--op-color-#{$type}));
-      --op-button-bg-color: rgb(var(--op-color-#{$type}-light-9));
-      --op-button-border-color: rgb(var(--op-color-#{$type}-light-5));
-      --op-button-hover-color: rgb(var(--op-color-reverse));
-      --op-button-hover-bg-color: rgb(var(--op-color-#{$type}));
-      --op-button-hover-border-color: rgb(var(--op-color-#{$type}));
-      --op-button-disabled-color: rgb(var(--op-color-#{$type}-light-5));
-      --op-button-disabled-bg-color: rgb(var(--op-color-#{$type}-light-9));
-      --op-button-disabled-border-color: rgb(var(--op-color-#{$type}-light-8));
+      --ls-button-color: rgb(var(--ls-color-#{$type}));
+      --ls-button-bg-color: rgb(var(--ls-color-#{$type}-light-9));
+      --ls-button-border-color: rgb(var(--ls-color-#{$type}-light-5));
+      --ls-button-hover-color: rgb(var(--ls-color-reverse));
+      --ls-button-hover-bg-color: rgb(var(--ls-color-#{$type}));
+      --ls-button-hover-border-color: rgb(var(--ls-color-#{$type}));
+      --ls-button-disabled-color: rgb(var(--ls-color-#{$type}-light-5));
+      --ls-button-disabled-bg-color: rgb(var(--ls-color-#{$type}-light-9));
+      --ls-button-disabled-border-color: rgb(var(--ls-color-#{$type}-light-8));
     }
   }
 }
@@ -40,40 +40,40 @@ $button-types: primary, success, warning, danger, info;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--op-button-padding-y) var(--op-button-padding-x);
+  padding: var(--ls-button-padding-y) var(--ls-button-padding-x);
   font-size: 14px;
   font-weight: normal;
   line-height: 1;
-  color: var(--op-button-color);
+  color: var(--ls-button-color);
   text-align: center;
   white-space: nowrap;
   cursor: pointer;
   user-select: none;
-  background-color: var(--op-button-bg-color);
-  border-color: var(--op-button-border-color);
+  background-color: var(--ls-button-bg-color);
+  border-color: var(--ls-button-border-color);
   border-style: solid;
   border-width: 1px;
   border-radius: 4px;
   outline: none;
 
   &:hover {
-    color: var(--op-button-hover-color);
-    background-color: var(--op-button-hover-bg-color);
-    border-color: var(--op-button-hover-border-color);
+    color: var(--ls-button-hover-color);
+    background-color: var(--ls-button-hover-bg-color);
+    border-color: var(--ls-button-hover-border-color);
   }
 
   &:active {
-    color: var(--op-button-active-color);
-    background-color: var(--op-button-active-bg-color);
-    border-color: var(--op-button-active-border-color);
+    color: var(--ls-button-active-color);
+    background-color: var(--ls-button-active-bg-color);
+    border-color: var(--ls-button-active-border-color);
   }
 
   @include button-type-styles;
 
   &.op-button--plain {
-    --op-button-hover-color: rgb(var(--op-color-primary));
-    --op-button-hover-bg-color: rgb(var(--op-color-card));
-    --op-button-hover-border-color: rgb(var(--color-primary));
+    --ls-button-hover-color: rgb(var(--ls-color-primary));
+    --ls-button-hover-bg-color: rgb(var(--ls-color-card));
+    --ls-button-hover-border-color: rgb(var(--color-primary));
 
     @include button-plain-styles;
   }
@@ -81,9 +81,9 @@ $button-types: primary, success, warning, danger, info;
   &.op-button--disabled,
   &.op-button--disabled:hover,
   &.op-button--disabled:active {
-    color: var(--op-button-disabled-color);
+    color: var(--ls-button-disabled-color);
     cursor: not-allowed;
-    background-color: var(--op-button-disabled-bg-color);
-    border-color: var(--op-button-disabled-border-color);
+    background-color: var(--ls-button-disabled-bg-color);
+    border-color: var(--ls-button-disabled-border-color);
   }
 }

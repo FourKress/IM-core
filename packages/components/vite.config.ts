@@ -1,3 +1,7 @@
 import { generateVueConfig } from '../build/scripts'
 
-export default generateVueConfig()
+export default generateVueConfig({
+  presetImCoreOptions: {
+    include: ['button']
+  }
+})

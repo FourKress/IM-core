@@ -10,8 +10,6 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
-// const wasm = require('vite-plugin-wasm')
-
 export default defineConfig({
   resolve: {
     alias: [

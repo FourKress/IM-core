@@ -2,11 +2,6 @@
   "name": "@im-core/styles",
   "version": "0.0.0",
   "description": "",
-  "keywords": [
-    "vue",
-    "ui",
-    "component library"
-  ],
   "scripts": {
     "build:theme": "vite build --mode theme",
     "build:unocss": "vite build --mode unocss",

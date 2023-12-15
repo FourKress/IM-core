@@ -3,7 +3,7 @@ import { isObjectLike } from '@im-core/utils'
 import { generateCssVars } from '../utils'
 import { themeColorLevelsEnabledKeys, ImCoreCssVarsConfig } from '../vars'
 
-const THEME_PROVIDE_KEY = '__OpenxUITheme__'
+const THEME_PROVIDE_KEY = '__LsUITheme__'
 
 function useGlobalTheme(app: App, options?: ImCoreCssVarsConfig) {
   /** 设置全局主题变量的方法 */

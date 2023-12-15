@@ -27,7 +27,7 @@ function switchGlobalTheme() {
   }
 
   const el = document.documentElement
-  const myColorPrimary = getComputedStyle(el).getPropertyValue(`--op-color-primary`)
+  const myColorPrimary = getComputedStyle(el).getPropertyValue(`--ls-color-primary`)
   console.log(`rgba(${myColorPrimary} / 1)`)
   el.style.setProperty('--el-color-primary', `rgba(${myColorPrimary} / 1)`)
 }
