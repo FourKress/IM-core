@@ -1,0 +1,10 @@
+.app-header {
+  @apply
+    w-screen h-48px flex items-center justify-center bg-primary relative;
+
+  .user {
+    @apply h-34px absolute top-50% flex left-160 rd-2 justify-center items-start;
+
+    transform: translateY(-50%);
+  }
+}

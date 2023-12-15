@@ -29,10 +29,10 @@ function useGlobalTheme(app: App, options?: ImCoreCssVarsConfig) {
   return result
 }
 
-type OpenxUITheme = ReturnType<typeof useGlobalTheme>
+type LsUITheme = ReturnType<typeof useGlobalTheme>
 
 export function useTheme() {
-  const result = inject<OpenxUITheme>(THEME_PROVIDE_KEY)
+  const result = inject<LsUITheme>(THEME_PROVIDE_KEY)
   if (!result) {
     throw new Error('useTheme() must be used after app.use(Theme)!')
   }

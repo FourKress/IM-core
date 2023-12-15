@@ -27,27 +27,32 @@ export function toTheme<
     colorLevels = 9
   } = options || {}
 
+  const result: Record<string, any> = {}
+
   // 从原始对象中过滤出符合格式的键值
   const themeReg = new RegExp(`^${type}-(.*)$`)
   const keys = Object.keys(origin)
     .filter((key) => themeReg.test(key))
     .map((key) => key.replace(themeReg, '$1'))
 
-  const result: Record<string, any> = {}
   keys.forEach((key) => {
-    // 主题必须符合类似 rgb(var(--op-color-primary)) 的格式，这样 UnoCSS 能生成的原子类既能支持 CSS 变量，又能支持透明度修改
-    result[key] = `rgb(${getCssVar(`${type}-${key}`, prefix)})`
+    if (type === 'color') {
+      // 主题必须符合类似 rgb(var(--op-color-primary)) 的格式，这样 UnoCSS 能生成的原子类既能支持 CSS 变量，又能支持透明度修改
+      result[key] = `rgb(${getCssVar(`${type}-${key}`, prefix)})`
 
-    // 处理色阶主题
-    if (type === 'color' && colorLevelsEnabledKeys.includes(`${type}-${key}` as K)) {
-      const lightColors: Record<string, any> = {}
-      const darkColors: Record<string, any> = {}
-      for (let i = 1; i < colorLevels + 1; i++) {
-        lightColors[`${i}`] = `rgb(${getCssVar(`${type}-${key}-light-${i}`, prefix)})`
-        darkColors[`${i}`] = `rgb(${getCssVar(`${type}-${key}-dark-${i}`, prefix)})`
+      // 处理色阶主题
+      if (type === 'color' && colorLevelsEnabledKeys.includes(`${type}-${key}` as K)) {
+        const lightColors: Record<string, any> = {}
+        const darkColors: Record<string, any> = {}
+        for (let i = 1; i < colorLevels + 1; i++) {
+          lightColors[`${i}`] = `rgb(${getCssVar(`${type}-${key}-light-${i}`, prefix)})`
+          darkColors[`${i}`] = `rgb(${getCssVar(`${type}-${key}-dark-${i}`, prefix)})`
+        }
+        result[`${key}_light`] = lightColors
+        result[`${key}_dark`] = darkColors
       }
-      result[`${key}_light`] = lightColors
-      result[`${key}_dark`] = darkColors
+    } else {
+      result[key] = `${getCssVar(`${type}-${key}`, prefix)}`
     }
   })
   return result

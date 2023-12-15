@@ -16,6 +16,7 @@
   "dependencies": {
     "@im-core/assets": "workspace:^",
     "@im-core/components": "workspace:^",
+    "@im-core/header": "workspace:^",
     "@im-core/styles": "workspace:^",
     "@im-core/utils": "workspace:^",
     "hello-wasm-ls": "^0.4.0",

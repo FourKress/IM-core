@@ -147,6 +147,8 @@ importers:
         specifier: workspace:^
         version: link:../utils
 
+  packages/header: {}
+
   packages/styles:
     dependencies:
       '@im-core/utils':
@@ -177,6 +179,9 @@ importers:
       '@im-core/components':
         specifier: workspace:^
         version: link:../packages/components
+      '@im-core/header':
+        specifier: workspace:^
+        version: link:../packages/header
       '@im-core/styles':
         specifier: workspace:^
         version: link:../packages/styles
