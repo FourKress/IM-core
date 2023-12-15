@@ -39,55 +39,5 @@ console.log(props, 1)
 </script>
 
 <style scoped lang="scss">
-.empty-data {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-
-  .empty-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 700px;
-    height: 500px;
-    transform: translate(-50%, -50%);
-
-    img {
-      display: block;
-      width: 141px;
-      height: 124px;
-    }
-
-    .tips {
-      padding-top: 16px;
-      font-size: 14px;
-    }
-  }
-}
-
-.test-class {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.5;
-  color: #212529;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  user-select: none;
-  background-color: #e9ecef;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-  transition:
-    color 0.15s ease-in-out,
-    background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
-}
+@use "style";
 </style>

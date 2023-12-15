@@ -1,11 +1,7 @@
-//:root {
-//  --op-color-primary: red
-//}
-
-@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
   $colors: (
-    'primary': (
-      'base': red,
+    "primary": (
+      "base": red,
     ),
   ),
 );
