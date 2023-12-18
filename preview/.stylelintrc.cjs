@@ -7,11 +7,12 @@ module.exports = {
     'stylelint-config-standard-scss',
     // scss vue 规则
     'stylelint-config-recommended-vue/scss',
-    "stylelint-prettier/recommended"
+    'stylelint-prettier/recommended'
   ],
   rules: {
     'selector-class-pattern': null,
     'scss/at-import-no-partial-leading-underscore': null,
-    "prettier/prettier": [true, {"singleQuote": true,}]
+    'prettier/prettier': [true, { singleQuote: true }],
+    'font-family-no-missing-generic-family-keyword': [true, { severity: 'warning' }]
   }
 }

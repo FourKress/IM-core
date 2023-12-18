@@ -1,8 +1,10 @@
-@use './fonts/index.css';
+@import 'fonts/index.css';
 
 *,
 *::before,
 *::after {
+  font-family: Alibaba-PuHuiTi-R;
+
   @apply box-border m0 font-normal;
 }
 
@@ -11,6 +13,7 @@ body,
 #app {
   @apply min-w-1200px min-h-screen font-size-14px line-height-[1.6];
 
+  font-family: Alibaba-PuHuiTi-R;
   transition:
     color 0.5s,
     background-color 0.5s;

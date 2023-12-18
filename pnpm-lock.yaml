@@ -150,7 +150,11 @@ importers:
         specifier: workspace:^
         version: link:../utils
 
-  packages/container: {}
+  packages/container:
+    dependencies:
+      '@im-core/components':
+        specifier: workspace:^
+        version: link:../components
 
   packages/header: {}
 

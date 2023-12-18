@@ -12,6 +12,7 @@ module.exports = {
   rules: {
     'selector-class-pattern': null,
     'scss/at-import-no-partial-leading-underscore': null,
-    'prettier/prettier': [true, { singleQuote: true }]
+    'prettier/prettier': [true, { singleQuote: true }],
+    'font-family-no-missing-generic-family-keyword': [true, { severity: 'warning' }]
   }
 }
