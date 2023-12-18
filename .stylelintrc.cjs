@@ -8,10 +8,13 @@ module.exports = {
     // scss vue 规则
     'stylelint-config-recommended-vue/scss',
     // 样式属性顺序规则
-    'stylelint-config-recess-order',
+    'stylelint-config-recess-order'
   ],
   rules: {
     'selector-class-pattern': null,
-    'scss/at-import-no-partial-leading-underscore': null
+    'scss/at-import-no-partial-leading-underscore': null,
+    'string-quotes': 'single',
+    'function-url-quotes': 'single',
+    'font-family-name-quotes': 'single'
   }
-};
+}

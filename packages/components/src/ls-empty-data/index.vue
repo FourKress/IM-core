@@ -39,5 +39,5 @@ console.log(props, 1)
 </script>
 
 <style scoped lang="scss">
-@use "style";
+@use 'style';
 </style>
