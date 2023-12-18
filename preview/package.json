@@ -14,12 +14,8 @@
     "format": "prettier --write src"
   },
   "dependencies": {
-    "@im-core/assets": "workspace:^",
-    "@im-core/components": "workspace:^",
-    "@im-core/header": "workspace:^",
-    "@im-core/styles": "workspace:^",
-    "@im-core/utils": "workspace:^",
-    "hello-wasm-ls": "^0.4.0",
+    "@im-core/layout": "workspace:^",
+    "localforage": "^1.10.0",
     "pinia": "^2.1.7",
     "vue": "^3.3.10",
     "vue-router": "^4.2.5"

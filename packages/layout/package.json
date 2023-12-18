@@ -1,0 +1,27 @@
+{
+  "name": "@im-core/layout",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "@im-core/container": "workspace:^",
+    "@im-core/styles": "workspace:^",
+    "localforage": "^1.10.0"
+  },
+  "main": "./dist/@im-core/layout.umd.js",
+  "module": "./dist/@im-core/layout.mjs",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/@im-core/layout.umd.js",
+      "import": "./dist/@im-core/layout.mjs",
+      "types": "./dist/src/index.d.ts"
+    },
+    "./*": "./*",
+    "./style.css": "./dist/style.css"
+  }
+}

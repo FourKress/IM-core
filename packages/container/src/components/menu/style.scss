@@ -1,0 +1,17 @@
+.app-menu {
+  user-select: none;
+
+  @apply w-48px h-full bg-fill-sidebar p-t-16 p-b-16;
+
+  .menu-item {
+    @apply cursor-pointer w-full h-48px flex flex-col justify-center items-center font-size-12px font-bold c-text-secondary hover:c-primary;
+
+    &.menu-active {
+      @apply relative c-primary;
+
+      &::before {
+        @apply h-full w-2px content-empty bg-primary absolute top-0 left-0;
+      }
+    }
+  }
+}

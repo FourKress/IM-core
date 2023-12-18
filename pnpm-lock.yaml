@@ -54,6 +54,9 @@ importers:
       eslint-plugin-vue:
         specifier: ^9.17.0
         version: 9.19.2(eslint@8.55.0)
+      localforage:
+        specifier: ^1.10.0
+        version: 1.10.0
       npm-run-all2:
         specifier: ^6.1.1
         version: 6.1.1
@@ -147,7 +150,21 @@ importers:
         specifier: workspace:^
         version: link:../utils
 
+  packages/container: {}
+
   packages/header: {}
+
+  packages/layout:
+    dependencies:
+      '@im-core/container':
+        specifier: workspace:^
+        version: link:../container
+      '@im-core/styles':
+        specifier: workspace:^
+        version: link:../styles
+      localforage:
+        specifier: ^1.10.0
+        version: 1.10.0
 
   packages/styles:
     dependencies:
@@ -173,24 +190,12 @@ importers:
 
   preview:
     dependencies:
-      '@im-core/assets':
+      '@im-core/layout':
         specifier: workspace:^
-        version: link:../packages/assets
-      '@im-core/components':
-        specifier: workspace:^
-        version: link:../packages/components
-      '@im-core/header':
-        specifier: workspace:^
-        version: link:../packages/header
-      '@im-core/styles':
-        specifier: workspace:^
-        version: link:../packages/styles
-      '@im-core/utils':
-        specifier: workspace:^
-        version: link:../packages/utils
-      hello-wasm-ls:
-        specifier: ^0.4.0
-        version: 0.4.0
+        version: link:../packages/layout
+      localforage:
+        specifier: ^1.10.0
+        version: 1.10.0
       pinia:
         specifier: ^2.1.7
         version: 2.1.7(typescript@5.3.3)(vue@3.3.11)
@@ -1432,6 +1437,7 @@ packages:
     resolution: {integrity: sha512-k5fggr14DwAytoA/t8rPrIz++lXK7/DqckthCmoZOKNsEbJkId4Z//BqgApXBUGrGddrigYa1oqheo/7YmW4rg==}
     dependencies:
       undici-types: 5.26.5
+    dev: true
 
   /@types/node@20.10.4:
     resolution: {integrity: sha512-D08YG6rr8X90YB56tSIuBaddy/UXAA9RKJoFvrsnogAum/0pmjkgi4+2nx96A330FmioegBWmEYQ+syqCFaveg==}
@@ -1785,7 +1791,7 @@ packages:
       '@babel/core': 7.23.6
       '@babel/plugin-transform-typescript': 7.23.6(@babel/core@7.23.6)
       '@vue/babel-plugin-jsx': 1.1.5(@babel/core@7.23.6)
-      vite: 5.0.9(@types/node@18.19.3)(sass@1.69.5)
+      vite: 5.0.9(@types/node@20.10.4)(sass@1.69.5)
       vue: 3.3.11(typescript@5.3.3)
     transitivePeerDependencies:
       - supports-color
@@ -1798,7 +1804,7 @@ packages:
       vite: ^4.0.0 || ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 5.0.9(@types/node@18.19.3)(sass@1.69.5)
+      vite: 5.0.9(@types/node@20.10.4)(sass@1.69.5)
       vue: 3.3.11(typescript@5.3.3)
 
   /@volar/language-core@1.11.1:
@@ -2971,10 +2977,6 @@ packages:
     hasBin: true
     dev: true
 
-  /hello-wasm-ls@0.4.0:
-    resolution: {integrity: sha512-4LSF1docaNkE8joV4cVMABgAcZBTaoGydPxHLTYhm5dcJ+4hg66iTaieSGXsoekj4YMexuUMvPEl0O9cGTfr0Q==}
-    dev: false
-
   /hosted-git-info@4.1.0:
     resolution: {integrity: sha512-kyCuEOWjJqZuDbRHzL8V93NzQhwIB71oFWSyzVo+KPZI+pnQPPxucdkrOZvkLRnrf5URsQM+IJ09Dw29cRALIA==}
     engines: {node: '>=10'}
@@ -3015,6 +3017,9 @@ packages:
     resolution: {integrity: sha512-g7dmpshy+gD7mh88OC9NwSGTKoc3kyLAZQRU1mt53Aw/vnvfXnbC+F/7F7QoYVKbV+KNvJx8wArewKy1vXMtlg==}
     engines: {node: '>= 4'}
     dev: true
+
+  /immediate@3.0.6:
+    resolution: {integrity: sha512-XXOFtyqDjNDAQxVfYxuF7g9Il/IbWmmlQg2MYKOH8ExIT1qg6xc4zyS3HaEEATgs1btfzxq15ciUiY7gjSXRGQ==}
 
   /immutable@4.3.4:
     resolution: {integrity: sha512-fsXeu4J4i6WNWSikpI88v/PcVflZz+6kMhUfIwc5SY+poQRPnaf5V7qds6SUyUN3cVxEzuCab7QIoLOQ+DQ1wA==}
@@ -3239,6 +3244,11 @@ packages:
       type-check: 0.4.0
     dev: true
 
+  /lie@3.1.1:
+    resolution: {integrity: sha512-RiNhHysUjhrDQntfYSfY4MU24coXXdEOgw9WGcKHNeEwffDYbF//u87M1EWaMGzuFoSbqW0C9C6lEEhDOAswfw==}
+    dependencies:
+      immediate: 3.0.6
+
   /lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
@@ -3259,6 +3269,11 @@ packages:
       mlly: 1.4.2
       pkg-types: 1.0.3
     dev: true
+
+  /localforage@1.10.0:
+    resolution: {integrity: sha512-14/H1aX7hzBBmmh7sGPd+AOMkkIrHM3Z1PAyGgZigA1H1p5O5ANnMyWzvpAETtG68/dC4pC0ncy3+PPGzXZHPg==}
+    dependencies:
+      lie: 3.1.1
 
   /locate-path@6.0.0:
     resolution: {integrity: sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==}
@@ -4596,7 +4611,7 @@ packages:
       '@rollup/plugin-virtual': 3.0.2
       '@swc/core': 1.3.100
       uuid: 9.0.1
-      vite: 5.0.9(@types/node@18.19.3)(sass@1.69.5)
+      vite: 5.0.9(@types/node@20.10.4)(sass@1.69.5)
     transitivePeerDependencies:
       - '@swc/helpers'
       - rollup
@@ -4607,7 +4622,7 @@ packages:
     peerDependencies:
       vite: ^2 || ^3 || ^4 || ^5
     dependencies:
-      vite: 5.0.9(@types/node@18.19.3)(sass@1.69.5)
+      vite: 5.0.9(@types/node@20.10.4)(sass@1.69.5)
     dev: true
 
   /vite@5.0.9(@types/node@18.19.3)(sass@1.69.5):
@@ -4645,6 +4660,7 @@ packages:
       sass: 1.69.5
     optionalDependencies:
       fsevents: 2.3.3
+    dev: true
 
   /vite@5.0.9(@types/node@20.10.4)(sass@1.69.5):
     resolution: {integrity: sha512-wVqMd5kp28QWGgfYPDfrj771VyHTJ4UDlCteLH7bJDGDEamaz5hV8IX6h1brSGgnnyf9lI2RnzXq/JmD0c2wwg==}

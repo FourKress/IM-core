@@ -1,5 +1,5 @@
 {
-  "name": "@im-core/header",
+  "name": "@im-core/container",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -7,14 +7,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "main": "./dist/@im-core/header.umd.js",
-  "module": "./dist/@im-core/header.mjs",
+  "main": "./dist/@im-core/container.umd.js",
+  "module": "./dist/@im-core/container.mjs",
   "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/@im-core/header.umd.js",
-      "import": "./dist/@im-core/header.mjs",
+      "require": "./dist/@im-core/container.umd.js",
+      "import": "./dist/@im-core/container.mjs",
       "types": "./dist/src/index.d.ts"
     },
     "./*": "./*",

@@ -1,8 +1,29 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useTheme, tinyThemeVars, themeVars } from '@im-core/styles'
+
 defineOptions({
   name: 'LsHeader'
 })
+
+const { setTheme } = useTheme()
+
+const currentGlobalTheme = ref<'default' | 'tiny'>('default')
+
+function switchGlobalTheme() {
+  if (currentGlobalTheme.value === 'tiny') {
+    currentGlobalTheme.value = 'default'
+    setTheme(themeVars)
+  } else {
+    currentGlobalTheme.value = 'tiny'
+    setTheme(tinyThemeVars)
+  }
+
+  const el = document.documentElement
+  const myColorPrimary = getComputedStyle(el).getPropertyValue(`--ls-color-primary`)
+  console.log(`rgba(${myColorPrimary} / 1)`)
+  el.style.setProperty('--el-color-primary', `rgba(${myColorPrimary} / 1)`)
+}
 
 const menu = ref<{ name: string; id: number }[]>([
   {
@@ -27,7 +48,7 @@ const handleSelectMenu = (id: number): void => {
 
 <template>
   <header class="app-header">
-    <div class="user">
+    <div class="user" @click="switchGlobalTheme">
       <div class="avatar">
         <img src="" alt="" />
       </div>

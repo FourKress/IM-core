@@ -1,16 +1,9 @@
-import './assets/base.scss'
-import 'virtual:uno.css'
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-import { Theme } from '@im-core/styles'
+import Layout from '@im-core/layout'
 
-import App from './App.vue'
-import router from './router'
-
-const app = createApp(App)
-
-app.use(createPinia())
-app.use(router)
-app.use(Theme)
-
-app.mount('#app')
+Layout()
+  .then((app) => {
+    console.log('当前app: ', app)
+  })
+  .catch((error) => {
+    console.error(error)
+  })

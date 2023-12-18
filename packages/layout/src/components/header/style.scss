@@ -1,7 +1,7 @@
 .app-header {
   user-select: none;
 
-  @apply w-screen h-48px bg-primary relative;
+  @apply w-full h-48px bg-primary relative;
 
   .user {
     @apply h-36px absolute top-50% flex left-8 rd-2 justify-center items-start cursor-pointer;
@@ -13,7 +13,7 @@
     }
 
     .info {
-      @apply h-100% flex flex-col justify-center items-start;
+      @apply h-full flex flex-col justify-center items-start;
 
       .name {
         @apply font-size-14px mb--1px font-bold c-white;
@@ -26,7 +26,7 @@
   }
 
   .menu {
-    @apply h-100% flex justify-center items-center line-height-48px;
+    @apply h-full flex justify-center items-center line-height-48px;
 
     .menu-item {
       @apply cursor-pointer w-76px flex items-center justify-center bg-primary c-white/80
