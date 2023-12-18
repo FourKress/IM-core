@@ -1,8 +1,7 @@
 .app-header {
   user-select: none;
 
-  @apply
-    w-screen h-48px bg-primary relative;
+  @apply w-screen h-48px bg-primary relative;
 
   .user {
     @apply h-36px absolute top-50% flex left-8 rd-2 justify-center items-start cursor-pointer;
