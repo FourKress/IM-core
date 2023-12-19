@@ -1,8 +1,8 @@
 import { toRgba, generateRgbColorLevels } from './colors'
 
-export type DefaultPrefix = 'ls-'
+export type DefaultPrefix = 'im-'
 /** 默认情况下，生成 CSS 变量时增加的前缀 */
-export const DEFAULT_PREFIX: DefaultPrefix = 'ls-'
+export const DEFAULT_PREFIX: DefaultPrefix = 'im-'
 
 /**
  * 生成 CSS 变量对象的选项

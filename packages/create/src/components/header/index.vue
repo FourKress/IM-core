@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { useTheme, tinyThemeVars, themeVars } from '@im-core/styles'
 
 defineOptions({
-  name: 'LsHeader'
+  name: 'ImHeader'
 })
 
 const { setTheme } = useTheme()
@@ -20,7 +20,7 @@ function switchGlobalTheme() {
   }
 
   const el = document.documentElement
-  const myColorPrimary = getComputedStyle(el).getPropertyValue(`--ls-color-primary`)
+  const myColorPrimary = getComputedStyle(el).getPropertyValue(`--im-color-primary`)
   console.log(`rgba(${myColorPrimary} / 1)`)
   el.style.setProperty('--el-color-primary', `rgba(${myColorPrimary} / 1)`)
 }
@@ -47,7 +47,7 @@ const handleSelectMenu = (id: number): void => {
 </script>
 
 <template>
-  <header class="app-header">
+  <header class="im-header">
     <div class="user" @click="switchGlobalTheme">
       <div class="avatar">
         <img src="" alt="" />

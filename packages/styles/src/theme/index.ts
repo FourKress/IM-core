@@ -3,7 +3,7 @@ import { isObjectLike } from '@im-core/utils'
 import { generateCssVars } from '../utils'
 import { themeColorLevelsEnabledKeys, ImCoreCssVarsConfig } from '../vars'
 
-const THEME_PROVIDE_KEY = '__LsUITheme__'
+const THEME_PROVIDE_KEY = '__ImUITheme__'
 
 function useGlobalTheme(app: App, options?: ImCoreCssVarsConfig) {
   /** 设置全局主题变量的方法 */
@@ -29,10 +29,10 @@ function useGlobalTheme(app: App, options?: ImCoreCssVarsConfig) {
   return result
 }
 
-type LsUITheme = ReturnType<typeof useGlobalTheme>
+type ImUITheme = ReturnType<typeof useGlobalTheme>
 
 export function useTheme() {
-  const result = inject<LsUITheme>(THEME_PROVIDE_KEY)
+  const result = inject<ImUITheme>(THEME_PROVIDE_KEY)
   if (!result) {
     throw new Error('useTheme() must be used after app.use(Theme)!')
   }

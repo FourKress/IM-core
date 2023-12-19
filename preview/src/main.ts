@@ -1,6 +1,6 @@
-import Layout from '@im-core/create'
+import createApp from '@im-core/create'
 
-Layout()
+createApp()
   .then((app) => {
     console.log('当前app: ', app)
   })

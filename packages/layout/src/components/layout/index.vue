@@ -1,20 +1,20 @@
 <script setup lang="ts">
-// import { LsEmptyData } from '@im-core/components'
-import MainMenu from '../menu/index.vue'
+// import { ImEmptyData } from '@im-core/components'
+import ImMainMenu from '../menu/index.vue'
 
 defineOptions({
-  name: 'LsMainLayout'
+  name: 'ImMainLayout'
 })
 </script>
 
 <template>
-  <div id="ls-container">
+  <div id="im-layout">
     <div class="app-container">
-      <MainMenu />
+      <ImMainMenu />
       <div class="main-container">
         <!--        <div :id="MICRO_CONTAINER" class="micro-app" v-if="isMicro"></div>-->
         <!--        <router-view class="router-view" v-else />-->
-        <!--        <LsEmptyData></LsEmptyData>-->
+        <!--        <ImEmptyData></ImEmptyData>-->
       </div>
     </div>
   </div>

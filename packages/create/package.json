@@ -14,5 +14,17 @@
   "dependencies": {
     "@im-core/layout": "workspace:^",
     "@im-core/styles": "workspace:^"
+  },
+  "main": "./dist/@im-core/create.umd.js",
+  "module": "./dist/@im-core/create.mjs",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/@im-core/create.umd.js",
+      "import": "./dist/@im-core/create.mjs",
+      "types": "./dist/src/index.d.ts"
+    },
+    "./*": "./*",
+    "./style.css": "./dist/style.css"
   }
 }

@@ -1,6 +1,6 @@
 <template>
-  <div class="empty-data">
-    <div class="empty-container flex flex-col flex-items-center justify-center bg-warning/40">
+  <div class="im-empty">
+    <div class="container flex flex-col flex-items-center justify-center bg-warning/40">
       <img :src="imgSrc" alt="" />
       <span class="tips c-warning/90 pb-36 cursor-pointer">{{ tips }}1</span>
       <el-button size="small" type="primary"> 测试恶趣味 </el-button>

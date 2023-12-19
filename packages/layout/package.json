@@ -13,5 +13,17 @@
   },
   "dependencies": {
     "@im-core/components": "workspace:^"
+  },
+  "main": "./dist/@im-core/layout.umd.js",
+  "module": "./dist/@im-core/layout.mjs",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/@im-core/layout.umd.js",
+      "import": "./dist/@im-core/layout.mjs",
+      "types": "./dist/src/index.d.ts"
+    },
+    "./*": "./*",
+    "./style.css": "./dist/style.css"
   }
 }

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineOptions({
-  name: 'LsButton'
+  name: 'ImButton'
 })
 import { computed } from 'vue'
 
@@ -44,5 +44,5 @@ const classes = computed(() => {
 </template>
 
 <style scoped lang="scss">
-@use "style";
+@use 'style';
 </style>

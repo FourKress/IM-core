@@ -8,14 +8,14 @@ import { Theme } from '@im-core/styles'
 
 import AppElement from './App.vue'
 
-interface LayoutConfig {
+interface CreateConfig {
   routes?: []
   menu?: []
   plugins?: []
   store?: []
 }
 
-const Layout = async (config: LayoutConfig = {}): Promise<App> => {
+const createIMApp = async (config: CreateConfig = {}): Promise<App> => {
   const { routes = [] } = config
 
   window.$lanshuStore = localforage.createInstance({
@@ -87,4 +87,4 @@ const Layout = async (config: LayoutConfig = {}): Promise<App> => {
   return app
 }
 
-export default Layout
+export default createIMApp

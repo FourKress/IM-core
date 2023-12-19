@@ -19,5 +19,22 @@
   },
   "dependencies": {
     "@im-core/utils": "workspace:^"
-  }
+  },
+  "exports": {
+    "./preset": {
+      "require": "./dist/preset.umd.js",
+      "import": "./dist/preset.mjs",
+      "types": "./dist/src/unoPreset.d.ts"
+    },
+    "./*": "./*",
+    ".": {
+      "require": "./dist/@im-core/styles.umd.js",
+      "import": "./dist/@im-core/styles.mjs",
+      "types": "./dist/src/index.d.ts"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "main": "./dist/@im-core/styles.umd.js",
+  "module": "./dist/@im-core/styles.mjs",
+  "types": "./dist/src/index.d.ts"
 }

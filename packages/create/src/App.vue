@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import MainLayout from './components/layout/index.vue'
+import ImMainLayout from './components/layout/index.vue'
 defineOptions({
-  name: 'LsApp'
+  name: 'ImApp'
 })
 </script>
 
 <template>
-  <div id="ls-app">
-    <MainLayout />
+  <div id="im-app">
+    <ImMainLayout />
   </div>
 </template>
 
 <style scoped lang="scss">
-#ls-app {
+#im-app {
   box-sizing: border-box;
   height: 100vh;
   overflow: hidden;

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 defineOptions({
-  name: 'LsMenu'
+  name: 'ImMenu'
 })
 
 const menu = ref<{ name: string; id: number }[]>([
@@ -23,7 +23,7 @@ const handleSelectMenu = (id: number): void => {
 </script>
 
 <template>
-  <div class="app-menu">
+  <div class="im-menu">
     <div class="menu">
       <div
         class="menu-item"

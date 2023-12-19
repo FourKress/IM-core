@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { RouterView, useRoute } from 'vue-router'
 import { computed } from 'vue'
-import LsHeader from '../header/index.vue'
-import { LsMainLayout } from '@im-core/layout'
+import ImHeader from '../header/index.vue'
+import { ImMainLayout } from '@im-core/layout'
 
 defineOptions({
-  name: 'LsLayout'
+  name: 'ImMain'
 })
 
 const route = useRoute()
@@ -17,9 +17,9 @@ const isFull = computed(() => {
 </script>
 
 <template>
-  <div id="ls-layout" v-if="isFull">
-    <LsHeader />
-    <LsMainLayout />
+  <div id="im-main" v-if="isFull">
+    <ImHeader />
+    <ImMainLayout />
   </div>
   <RouterView v-else class="router-view" />
 </template>

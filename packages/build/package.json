@@ -27,5 +27,16 @@
     "vue": {
       "optional": true
     }
+  },
+  "main": "./dist/@im-core/build.umd.js",
+  "module": "./dist/@im-core/build.mjs",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/@im-core/build.umd.js",
+      "import": "./dist/@im-core/build.mjs",
+      "types": "./dist/src/index.d.ts"
+    },
+    "./*": "./*"
   }
 }

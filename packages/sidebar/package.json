@@ -10,5 +10,17 @@
   ],
   "scripts": {
     "build": "vite build"
+  },
+  "main": "./dist/@im-core/sidebar.umd.js",
+  "module": "./dist/@im-core/sidebar.mjs",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/@im-core/sidebar.umd.js",
+      "import": "./dist/@im-core/sidebar.mjs",
+      "types": "./dist/src/index.d.ts"
+    },
+    "./*": "./*",
+    "./style.css": "./dist/style.css"
   }
 }

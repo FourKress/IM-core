@@ -1,0 +1,28 @@
+.im-empty {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 500px;
+    transform: translate(-50%, -50%);
+
+    img {
+      display: block;
+      width: 141px;
+      height: 124px;
+    }
+
+    .tips {
+      padding-top: 16px;
+      font-size: 14px;
+    }
+  }
+}
