@@ -1,7 +1,15 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import ImMainLayout from './components/layout/index.vue'
 defineOptions({
   name: 'ImApp'
+})
+
+onMounted(() => {
+  const el = document.documentElement
+  const myColorPrimary = getComputedStyle(el).getPropertyValue(`--im-color-primary`)
+  console.log(`rgba(${myColorPrimary} / 1)`)
+  el.style.setProperty('--el-color-primary', `rgba(${myColorPrimary} / 1)`)
 })
 </script>
 

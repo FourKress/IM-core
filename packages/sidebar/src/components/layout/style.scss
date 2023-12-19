@@ -11,21 +11,21 @@
 
     .sidebar-item {
       @apply w-full h-64px rd-4 overflow-hidden bg-transparent cursor-pointer
-      flex items-center;
+      flex items-center p-l-8;
 
       &.sidebar-active {
         @apply bg-fill-active;
       }
 
       .avatar {
-        @apply w-40px h-40px overflow-hidden rd-4 bg-warning m-r-8 m-l-8;
+        @apply w-40px h-40px overflow-hidden rd-4 bg-warning;
       }
 
       .info {
-        @apply flex flex-col justify-center items-start;
+        @apply flex flex-col justify-center items-start m-l-8;
 
         .name {
-          @apply font-size-14px font-bold;
+          @apply font-size-14px;
         }
 
         .time {

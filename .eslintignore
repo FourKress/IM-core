@@ -2,8 +2,8 @@
 preview
 node_modules
 dist
-out
 .gitignore
+**/iconfont
 
 !.eslintrc.js
 !.stylelintrc.cjs

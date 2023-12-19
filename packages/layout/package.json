@@ -12,6 +12,7 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@im-core/assets": "workspace:^",
     "@im-core/components": "workspace:^",
     "@im-core/sidebar": "workspace:^"
   },

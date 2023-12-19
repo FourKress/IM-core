@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+// import { LsIcon } from '@im-core/components'
 import { useTheme, tinyThemeVars, themeVars } from '@im-core/styles'
 
 defineOptions({
@@ -64,6 +65,7 @@ const handleSelectMenu = (id: number): void => {
         :class="defaultSelectId === item.id && 'menu-active'"
         v-for="item in menu"
         :key="item.id">
+        <!--        <LsIcon />-->
         {{ item.name }}
       </div>
     </div>

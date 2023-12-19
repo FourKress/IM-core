@@ -1,11 +1,10 @@
 @import 'fonts/index.css';
+@import 'iconfont/iconfont.css';
 
 *,
 *::before,
 *::after {
-  font-family: Alibaba-PuHuiTi-R;
-
-  @apply box-border m0 font-normal;
+  @apply box-border m0;
 }
 
 html,

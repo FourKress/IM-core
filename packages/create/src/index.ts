@@ -1,4 +1,4 @@
-import './assets/base.css'
+import '@im-core/assets'
 import 'virtual:uno.css'
 import { createApp, App } from 'vue'
 import { createPinia } from 'pinia'

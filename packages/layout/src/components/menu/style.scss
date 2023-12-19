@@ -17,6 +17,10 @@
           @apply h-full w-2px content-empty bg-primary absolute top-0 left-0;
         }
       }
+
+      .label {
+        @apply m-t-2px;
+      }
     }
   }
 }

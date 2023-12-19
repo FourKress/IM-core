@@ -11,16 +11,18 @@ const handleSelectSession = (id: number): void => {
   defaultSelectId.value = id
 }
 
-const sessionLst = ref<{ name: string; id: number; time: string }[]>([
+const sessionLst = ref<{ name: string; id: number; time: string; value: number }[]>([
   {
-    name: '好地方',
+    name: '李地方',
     id: 1,
-    time: '11:11'
+    time: '11:11',
+    value: 9
   },
   {
     name: '钢结构',
     id: 2,
-    time: '12:12'
+    time: '12:12',
+    value: 0
   }
 ])
 </script>
@@ -35,7 +37,9 @@ const sessionLst = ref<{ name: string; id: number; time: string }[]>([
         :class="defaultSelectId === item.id && 'sidebar-active'"
         v-for="item in sessionLst"
         :key="item.id">
-        <div class="avatar"></div>
+        <el-badge :value="item.value" :hidden="!item.value">
+          <div class="avatar"></div>
+        </el-badge>
         <div class="info">
           <span class="name">{{ item.name }}</span>
           <span class="time">{{ item.time }}</span>

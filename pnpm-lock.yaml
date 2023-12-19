@@ -161,6 +161,9 @@ importers:
 
   packages/layout:
     dependencies:
+      '@im-core/assets':
+        specifier: workspace:^
+        version: link:../assets
       '@im-core/components':
         specifier: workspace:^
         version: link:../components
@@ -194,6 +197,9 @@ importers:
 
   preview:
     dependencies:
+      '@im-core/assets':
+        specifier: workspace:^
+        version: link:../packages/assets
       '@im-core/create':
         specifier: workspace:^
         version: link:../packages/create

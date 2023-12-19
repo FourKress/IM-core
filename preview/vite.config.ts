@@ -23,13 +23,6 @@ export default defineConfig({
       }
     ]
   },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@use "./node_modules/@im-core/create/src/assets/theme.scss" as *;`
-      }
-    }
-  },
   plugins: [
     vue(),
     vueJsx(),
