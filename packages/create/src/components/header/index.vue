@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 // import { LsIcon } from '@im-core/components'
-import { useTheme, tinyThemeVars, themeVars } from '@im-core/styles'
+import { useTheme, tinyThemeVars, themeVars } from '@im-core/themes'
 
 defineOptions({
   name: 'ImHeader'

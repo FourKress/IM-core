@@ -2,7 +2,7 @@ import { mergeConfig, UserConfig } from 'vite'
 import { presetUno, PresetUnoOptions } from 'unocss/preset-uno'
 import unocss from 'unocss/vite'
 import transformerDirectives from '@unocss/transformer-directives'
-import { ImCorePreset, ImCorePresetOptions } from '../../styles/src/unoPreset'
+import { ImCorePreset, ImCorePresetOptions } from '../../themes/src/unoPreset'
 import { generateConfig } from './common'
 import { absCwd, relCwd, GenerateConfigOptions } from '../src'
 

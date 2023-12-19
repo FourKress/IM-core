@@ -12,8 +12,9 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@im-core/assets": "workspace:^",
     "@im-core/layout": "workspace:^",
-    "@im-core/styles": "workspace:^"
+    "@im-core/themes": "workspace:^"
   },
   "main": "./dist/@im-core/create.umd.js",
   "module": "./dist/@im-core/create.mjs",

@@ -152,12 +152,15 @@ importers:
 
   packages/create:
     dependencies:
+      '@im-core/assets':
+        specifier: workspace:^
+        version: link:../assets
       '@im-core/layout':
         specifier: workspace:^
         version: link:../layout
-      '@im-core/styles':
+      '@im-core/themes':
         specifier: workspace:^
-        version: link:../styles
+        version: link:../themes
 
   packages/layout:
     dependencies:
@@ -174,6 +177,18 @@ importers:
   packages/sidebar: {}
 
   packages/styles:
+    dependencies:
+      '@im-core/utils':
+        specifier: workspace:^
+        version: link:../utils
+      unocss:
+        specifier: '>=0.54.1'
+        version: 0.58.0(postcss@8.4.32)(vite@5.0.10)
+      vue:
+        specifier: '>=3.0.0'
+        version: 3.3.12(typescript@5.3.3)
+
+  packages/themes:
     dependencies:
       '@im-core/utils':
         specifier: workspace:^

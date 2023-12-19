@@ -1,5 +1,5 @@
 {
-  "name": "@im-core/styles",
+  "name": "@im-core/themes",
   "version": "0.0.0",
   "description": "主题、原子unocss、预设",
   "author": "wudong",
@@ -28,13 +28,13 @@
     },
     "./*": "./*",
     ".": {
-      "require": "./dist/@im-core/styles.umd.js",
-      "import": "./dist/@im-core/styles.mjs",
+      "require": "./dist/@im-core/themes.umd.js",
+      "import": "./dist/@im-core/themes.mjs",
       "types": "./dist/src/index.d.ts"
     },
     "./style.css": "./dist/style.css"
   },
-  "main": "./dist/@im-core/styles.umd.js",
-  "module": "./dist/@im-core/styles.mjs",
+  "main": "./dist/@im-core/themes.umd.js",
+  "module": "./dist/@im-core/themes.mjs",
   "types": "./dist/src/index.d.ts"
 }

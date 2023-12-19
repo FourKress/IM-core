@@ -4,7 +4,7 @@ import { createApp, App } from 'vue'
 import { createPinia } from 'pinia'
 import localforage from 'localforage'
 import { generateRoute } from '@im-core/layout'
-import { Theme } from '@im-core/styles'
+import { Theme } from '@im-core/themes'
 
 import AppElement from './App.vue'
 
