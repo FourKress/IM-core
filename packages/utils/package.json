@@ -3,17 +3,6 @@
   "version": "1.0.0",
   "description": "工具库",
   "author": "wudong",
-  "main": "./dist/@im-core/utils.umd.js",
-  "module": "./dist/@im-core/utils.mjs",
-  "types": "./dist/src/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/@im-core/utils.umd.js",
-      "import": "./dist/@im-core/utils.mjs",
-      "types": "./dist/src/index.d.ts"
-    },
-    "./*": "./*"
-  },
   "files": [
     "dist",
     "LICENSE",

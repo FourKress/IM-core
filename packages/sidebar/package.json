@@ -1,7 +1,7 @@
 {
-  "name": "@im-core/assets",
+  "name": "@im-core/sidebar",
   "version": "1.0.0",
-  "description": "图片、样式资源",
+  "description": "IM会话侧边栏",
   "author": "wudong",
   "files": [
     "dist",

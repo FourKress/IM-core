@@ -3,24 +3,8 @@
   "version": "1.0.0",
   "description": "组件库",
   "author": "wudong",
-  "main": "./dist/@im-core/components.umd.js",
-  "module": "./dist/@im-core/components.mjs",
-  "types": "./dist/src/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/@im-core/components.umd.js",
-      "import": "./dist/@im-core/components.mjs",
-      "types": "./dist/src/index.d.ts"
-    },
-    "./*": "./*",
-    "./style.css": "./dist/style.css"
-  },
-  "sideEffects": [
-    "**/*.css"
-  ],
   "files": [
     "dist",
-    "LICENSE",
     "README.md",
     "package.json"
   ],

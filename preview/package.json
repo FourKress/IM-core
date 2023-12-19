@@ -14,7 +14,7 @@
     "format": "prettier --write src"
   },
   "dependencies": {
-    "@im-core/layout": "workspace:^",
+    "@im-core/create": "workspace:^",
     "localforage": "^1.10.0",
     "pinia": "^2.1.7",
     "vue": "^3.3.10",

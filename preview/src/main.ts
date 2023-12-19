@@ -1,4 +1,4 @@
-import Layout from '@im-core/layout'
+import Layout from '@im-core/create'
 
 Layout()
   .then((app) => {

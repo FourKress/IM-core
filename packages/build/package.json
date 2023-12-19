@@ -3,21 +3,10 @@
   "version": "1.0.0",
   "description": "打包构建",
   "author": "wudong",
-  "main": "./dist/@im-core/build.umd.js",
-  "module": "./dist/@im-core/build.mjs",
-  "types": "./dist/src/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/@im-core/build.umd.js",
-      "import": "./dist/@im-core/build.mjs",
-      "types": "./dist/src/index.d.ts"
-    },
-    "./*": "./*"
-  },
   "files": [
     "dist",
-    "LICENSE",
-    "README.md"
+    "README.md",
+    "package.json"
   ],
   "scripts": {
     "build": "vite build"

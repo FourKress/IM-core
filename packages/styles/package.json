@@ -1,33 +1,18 @@
 {
   "name": "@im-core/styles",
   "version": "0.0.0",
-  "description": "",
+  "description": "主题、原子unocss、预设",
+  "author": "wudong",
+  "files": [
+    "dist",
+    "README.md",
+    "package.json"
+  ],
   "scripts": {
     "build:theme": "vite build --mode theme",
     "build:unocss": "vite build --mode unocss",
     "build": "pnpm run build:unocss && pnpm run build:theme"
   },
-  "main": "./dist/@im-core/styles.umd.js",
-  "module": "./dist/@im-core/styles.mjs",
-  "types": "./dist/src/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/@im-core/styles.umd.js",
-      "import": "./dist/@im-core/styles.mjs",
-      "types": "./dist/src/index.d.ts"
-    },
-    "./preset": {
-      "require": "./dist/preset.umd.js",
-      "import": "./dist/preset.mjs",
-      "types": "./dist/src/unoPreset.d.ts"
-    },
-    "./*": "./*",
-    "./style.css": "./dist/style.css"
-  },
-  "files": [
-    "dist",
-    "README.md"
-  ],
   "peerDependencies": {
     "vue": ">=3.0.0",
     "unocss": ">=0.54.1"

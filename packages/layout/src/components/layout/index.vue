@@ -1,27 +1,23 @@
 <script setup lang="ts">
-import { RouterView, useRoute } from 'vue-router'
-import { computed } from 'vue'
-import LsHeader from '../header/index.vue'
-import { LsMainLayout } from '@im-core/container'
+// import { LsEmptyData } from '@im-core/components'
+import MainMenu from '../menu/index.vue'
 
 defineOptions({
-  name: 'LsLayout'
-})
-
-const route = useRoute()
-
-const isFull = computed(() => {
-  const { isFull = false } = route.meta
-  return isFull
+  name: 'LsMainLayout'
 })
 </script>
 
 <template>
-  <div id="ls-layout" v-if="isFull">
-    <LsHeader />
-    <LsMainLayout />
+  <div id="ls-container">
+    <div class="app-container">
+      <MainMenu />
+      <div class="main-container">
+        <!--        <div :id="MICRO_CONTAINER" class="micro-app" v-if="isMicro"></div>-->
+        <!--        <router-view class="router-view" v-else />-->
+        <!--        <LsEmptyData></LsEmptyData>-->
+      </div>
+    </div>
   </div>
-  <RouterView v-else class="router-view" />
 </template>
 
 <style scoped lang="scss">
