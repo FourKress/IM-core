@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory, Router, RouteRecordRaw, RouterOptions } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import custom from '../views/custom/index.vue'
 
 const baseRoutes: RouteRecordRaw[] = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView,
+    name: 'custom',
+    component: custom,
     meta: {
       isFull: true
     }

@@ -40,8 +40,8 @@ export const themeColors = {
   'color-white': '#FFFFFF',
 
   // 边框主色
-  'color-bd_base': '#E9EBEF',
-  'color-bd_split': '#DADCE1',
+  'color-bd-base': '#E9EBEF',
+  'color-bd-split': '#DADCE1',
 
   // 填充 背景 色
   'color-fill-active': '#E7EDFA',

@@ -12,7 +12,8 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@im-core/components": "workspace:^"
+    "@im-core/components": "workspace:^",
+    "@im-core/sidebar": "workspace:^"
   },
   "main": "./dist/@im-core/layout.umd.js",
   "module": "./dist/@im-core/layout.mjs",

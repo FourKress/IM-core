@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { RouterView } from 'vue-router'
 // import { ImEmptyData } from '@im-core/components'
 import ImMainMenu from '../menu/index.vue'
 
@@ -15,6 +16,7 @@ defineOptions({
         <!--        <div :id="MICRO_CONTAINER" class="micro-app" v-if="isMicro"></div>-->
         <!--        <router-view class="router-view" v-else />-->
         <!--        <ImEmptyData></ImEmptyData>-->
+        <RouterView />
       </div>
     </div>
   </div>

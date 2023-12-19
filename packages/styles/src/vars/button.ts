@@ -5,7 +5,7 @@
 export const buttonVars = {
   // 'button-color': cssVarToRgba<ThemeCssVarsConfig>('color-regular'),
   // 'button-bg-color': cssVarToRgba<ThemeCssVarsConfig>('color-card'),
-  // 'button-border-color': cssVarToRgba<ThemeCssVarsConfig>('color-bd_base'),
+  // 'button-border-color': cssVarToRgba<ThemeCssVarsConfig>('color-bd-base'),
   // 'button-hover-color': cssVarToRgba<ThemeCssVarsConfig>('color-primary'),
   // 'button-hover-bg-color': cssVarToRgba('color-primary-light-9'),
   // 'button-hover-border-color': cssVarToRgba('color-primary-light-7'),

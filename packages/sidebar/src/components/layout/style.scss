@@ -1,0 +1,37 @@
+.im-sidebar {
+  @apply w-156px h-full bg-fill-grey-light flex flex-col justify-between;
+
+  .sidebar-header {
+    @apply w-full h-54px p-t-4 line-height-50px p-l-16 font-bold font-size-16px
+      c-text-title border-b-1px border-b-solid border-color-bd-base;
+  }
+
+  .sidebar-container {
+    @apply flex-1 overflow-y-auto p-8;
+
+    .sidebar-item {
+      @apply w-full h-64px rd-4 overflow-hidden bg-transparent cursor-pointer
+      flex items-center;
+
+      &.sidebar-active {
+        @apply bg-fill-active;
+      }
+
+      .avatar {
+        @apply w-40px h-40px overflow-hidden rd-4 bg-warning m-r-8 m-l-8;
+      }
+
+      .info {
+        @apply flex flex-col justify-center items-start;
+
+        .name {
+          @apply font-size-14px font-bold;
+        }
+
+        .time {
+          @apply font-size-12px c-text-secondary;
+        }
+      }
+    }
+  }
+}

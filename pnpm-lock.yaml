@@ -164,6 +164,9 @@ importers:
       '@im-core/components':
         specifier: workspace:^
         version: link:../components
+      '@im-core/sidebar':
+        specifier: workspace:^
+        version: link:../sidebar
 
   packages/sidebar: {}
 
