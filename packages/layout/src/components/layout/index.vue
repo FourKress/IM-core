@@ -9,7 +9,7 @@ defineOptions({
 
 <template>
   <div id="im-layout">
-    <div class="app-container">
+    <div class="im-container">
       <ImMainMenu />
       <div class="main-container">
         <!--        <div :id="MICRO_CONTAINER" class="micro-app" v-if="isMicro"></div>-->

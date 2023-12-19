@@ -1,7 +1,7 @@
 #im-layout {
   @apply flex flex-1 h-[calc(100%-48px)];
 
-  .app-container {
+  .im-container {
     @apply flex w-full h-full;
 
     .main-container {
