@@ -4,24 +4,16 @@
   @apply w-full h-48px bg-primary relative;
 
   .user {
-    @apply h-36px absolute top-50% flex left-8 rd-2 justify-center items-start cursor-pointer;
+    @apply h-36px absolute top-50% left-8 cursor-pointer;
 
     transform: translateY(-50%);
 
-    .avatar {
-      @apply block w-36px h-36px mr-8 bg-warning rd-4;
+    .name {
+      @apply font-size-14px c-white;
     }
 
-    .info {
-      @apply h-full flex flex-col justify-center items-start;
-
-      .name {
-        @apply font-size-14px mb--1px font-bold c-white;
-      }
-
-      .address {
-        @apply font-size-12px c-white/70;
-      }
+    .tips {
+      @apply font-size-12px c-white/70;
     }
   }
 

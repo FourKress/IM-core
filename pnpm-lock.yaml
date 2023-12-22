@@ -141,6 +141,8 @@ importers:
         specifier: '>=3.0.0'
         version: 3.3.12(typescript@5.3.3)
 
+  packages/chat: {}
+
   packages/components:
     dependencies:
       '@im-core/assets':
@@ -155,6 +157,9 @@ importers:
       '@im-core/assets':
         specifier: workspace:^
         version: link:../assets
+      '@im-core/components':
+        specifier: workspace:^
+        version: link:../components
       '@im-core/layout':
         specifier: workspace:^
         version: link:../layout
@@ -167,6 +172,9 @@ importers:
       '@im-core/assets':
         specifier: workspace:^
         version: link:../assets
+      '@im-core/chat':
+        specifier: workspace:^
+        version: link:../chat
       '@im-core/components':
         specifier: workspace:^
         version: link:../components
@@ -174,7 +182,11 @@ importers:
         specifier: workspace:^
         version: link:../sidebar
 
-  packages/sidebar: {}
+  packages/sidebar:
+    dependencies:
+      '@im-core/components':
+        specifier: workspace:^
+        version: link:../components
 
   packages/styles:
     dependencies:

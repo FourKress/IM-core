@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { ImIcon } from '@im-core/components'
 defineOptions({
   name: 'ImMenu'
 })

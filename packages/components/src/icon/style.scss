@@ -1,0 +1,16 @@
+.im-icon-container {
+  @apply inline-flex items-center justify-center;
+
+  .im-icon {
+    @apply overflow-hidden;
+
+    &-svg,
+    &-font {
+      @apply inline-block align-middle c-inherit;
+    }
+
+    &-font {
+      @apply font-size-16px line-height-16px c-inherit;
+    }
+  }
+}

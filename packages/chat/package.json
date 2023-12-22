@@ -1,7 +1,7 @@
 {
-  "name": "@im-core/sidebar",
+  "name": "@im-core/chat",
   "version": "1.0.0",
-  "description": "IM会话侧边栏",
+  "description": "聊天组件",
   "author": "wudong",
   "files": [
     "dist",
@@ -11,19 +11,16 @@
   "scripts": {
     "build": "vite build"
   },
-  "main": "./dist/@im-core/sidebar.umd.js",
-  "module": "./dist/@im-core/sidebar.mjs",
+  "main": "./dist/@im-core/chat.umd.js",
+  "module": "./dist/@im-core/chat.mjs",
   "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/@im-core/sidebar.umd.js",
-      "import": "./dist/@im-core/sidebar.mjs",
+      "require": "./dist/@im-core/chat.umd.js",
+      "import": "./dist/@im-core/chat.mjs",
       "types": "./dist/src/index.d.ts"
     },
     "./*": "./*",
     "./style.css": "./dist/style.css"
-  },
-  "dependencies": {
-    "@im-core/components": "workspace:^"
   }
 }

@@ -40,6 +40,7 @@ const svgStyle = computed(() => {
 
 const iconStyle = computed(() => {
   const { size, color } = props
+  console.log(color)
   return {
     fontSize: size ? `${size}px` : '',
     color

@@ -94,6 +94,7 @@ export const themeSpacing = {
 export const themeBorderRadius = {
   'border-radius-2': '2px',
   'border-radius-4': '4px',
+  'border-radius-6': '6px',
   'border-radius-8': '8px',
   'border-width-1': '1px'
 }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-// import { LsIcon } from '@im-core/components'
 import { useTheme, tinyThemeVars, themeVars } from '@im-core/themes'
+import { ImAvatar } from '@im-core/components'
 
 defineOptions({
   name: 'ImHeader'
@@ -50,13 +50,14 @@ const handleSelectMenu = (id: number): void => {
 <template>
   <header class="im-header">
     <div class="user" @click="switchGlobalTheme">
-      <div class="avatar">
-        <img src="" alt="" />
-      </div>
-      <div class="info">
-        <span class="name">张文文</span>
-        <span class="address">重庆市-永川区</span>
-      </div>
+      <ImAvatar :size="36" src="">
+        <template v-slot:name>
+          <span class="name">张文文</span>
+        </template>
+        <template v-slot:tips>
+          <span class="tips">重庆市-永川区</span>
+        </template>
+      </ImAvatar>
     </div>
     <div class="menu">
       <div
@@ -65,7 +66,6 @@ const handleSelectMenu = (id: number): void => {
         :class="defaultSelectId === item.id && 'menu-active'"
         v-for="item in menu"
         :key="item.id">
-        <!--        <LsIcon />-->
         {{ item.name }}
       </div>
     </div>

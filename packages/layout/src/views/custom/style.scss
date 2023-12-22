@@ -1,3 +1,7 @@
 .custom-page {
-  @apply w-full h-full;
+  @apply w-full h-full flex justify-center items-center;
+
+  .main-container {
+    @apply flex-1 h-full bg-fill-sidebar p-4 p-b-0;
+  }
 }

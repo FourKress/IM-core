@@ -8,7 +8,7 @@
     @apply flex-1 w-full overflow-y-auto;
 
     .menu-item {
-      @apply cursor-pointer w-full h-48px flex flex-col justify-center items-center font-size-12px font-bold c-text-secondary hover:c-primary;
+      @apply cursor-pointer w-full h-48px flex flex-col justify-center items-center font-size-12px c-text-secondary hover:c-primary;
 
       &.menu-active {
         @apply relative c-primary;

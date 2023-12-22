@@ -5,6 +5,7 @@ import { createPinia } from 'pinia'
 import localforage from 'localforage'
 import { generateRoute } from '@im-core/layout'
 import { Theme } from '@im-core/themes'
+import { ImIcon, ImAvatar } from '@im-core/components'
 
 import AppElement from './App.vue'
 
@@ -24,10 +25,10 @@ const createIMApp = async (config: CreateConfig = {}): Promise<App> => {
   window.$localStore = localforage.createInstance({
     name: 'localStore'
   })
-  window.$sessionStore = localforage.createInstance({
-    name: 'sessionStore'
+  window.$chatStore = localforage.createInstance({
+    name: 'chatStore'
   })
-  await window.$sessionStore.clear()
+  await window.$chatStore.clear()
 
   // const { menu, routes, plugins = [], store } = config;
   // if (menu) {
@@ -78,6 +79,8 @@ const createIMApp = async (config: CreateConfig = {}): Promise<App> => {
   // }
 
   const app = createApp(AppElement)
+
+  app.component(ImIcon.name, ImIcon).component(ImAvatar.name, ImAvatar)
 
   app.use(createPinia())
   app.use(generateRoute(routes))

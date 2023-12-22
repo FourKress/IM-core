@@ -16,22 +16,6 @@
       &.sidebar-active {
         @apply bg-fill-active;
       }
-
-      .avatar {
-        @apply w-40px h-40px overflow-hidden rd-4 bg-warning;
-      }
-
-      .info {
-        @apply flex flex-col justify-center items-start m-l-8;
-
-        .name {
-          @apply font-size-14px;
-        }
-
-        .time {
-          @apply font-size-12px c-text-secondary;
-        }
-      }
     }
   }
 }

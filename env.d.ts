@@ -8,7 +8,7 @@ declare global {
   interface Window {
     $lanshuStore: LocalForage
     $localStore: LocalForage
-    $sessionStore: LocalForage
+    $chatStore: LocalForage
   }
 }
 

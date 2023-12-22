@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ImSideBar } from '@im-core/sidebar'
+import { ImChat } from '@im-core/chat'
 defineOptions({
   name: 'ImCustom'
 })
@@ -7,7 +8,10 @@ defineOptions({
 
 <template>
   <div class="custom-page">
-    <ImSideBar></ImSideBar>
+    <ImSideBar />
+    <div class="main-container">
+      <ImChat />
+    </div>
   </div>
 </template>
 
