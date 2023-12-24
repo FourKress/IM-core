@@ -15,7 +15,7 @@
     "type:check": "pnpm type:node && pnpm type:web",
     "type:clean": "rimraf ./dist",
     "dev": "pnpm -F preview run dev",
-    "build:pkg": "pnpm type:check && pnpm -F ./packages/** build && pnpm type:clean",
+    "build:pkg": "pnpm type:check && pnpm -F './packages/**' build && pnpm type:clean",
     "build:pro": "pnpm build:pkg && pnpm -F preview run build",
     "build:run": "pnpm -F preview run preview"
   },
@@ -36,6 +36,8 @@
     "@vue/tsconfig": "^0.4.0",
     "element-plus": "^2.4.3",
     "eslint": "^8.49.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-vue": "^9.17.0",
     "npm-run-all2": "^6.1.1",
     "prettier": "^3.0.3",
