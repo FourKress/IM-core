@@ -1,5 +1,5 @@
-<script setup lang="ts">
-import { ImChat } from '@im-core/chat'
+<script lang="ts" setup>
+import { ImChat, ImChatSynergy } from '@im-core/chat'
 import { ImSideBar } from '@im-core/sidebar'
 
 defineOptions({
@@ -12,10 +12,11 @@ defineOptions({
     <ImSideBar />
     <div class="main-container">
       <ImChat />
+      <ImChatSynergy />
     </div>
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @use 'style';
 </style>

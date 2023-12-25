@@ -1,15 +1,15 @@
 .chat-header-container {
   @apply w-full h-50px bg-white
-    p-l-16 p-r-16
-    flex justify-between items-center
-    border-b-1px border-b-solid border-color-bd-base;
+  p-l-16 p-r-16
+  flex justify-between items-center
+  border-b-1px border-b-solid border-color-bd-base;
 
   .opt-area {
     @apply flex items-center;
 
     .opt-icon {
       @apply cursor-pointer ml-12 c-fill-icon-dark
-        hover:c-primary-hover;
+      hover:c-primary;
     }
 
     .btn {
@@ -22,5 +22,9 @@
       border-top-left-radius: var(--im-border-radius-6);
       border-bottom-right-radius: var(--im-border-radius-6);
     }
+  }
+
+  &.synergy {
+    @apply bg-fill-grey-dark;
   }
 }

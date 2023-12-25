@@ -1,0 +1,15 @@
+.chat-synergy-container {
+  @apply w-440px h-full rd-t-4 overflow-hidden bg-fill-grey-light
+  flex flex-col items-center m-l-4;
+
+  .synergy-header {
+    @apply w-full h-50px min-h-50px bg-white
+    p-l-16 p-r-16
+    flex justify-between items-center
+    border-b-1px border-b-solid border-color-bd-base font-bold;
+  }
+
+  .synergy-main {
+    @apply flex-1 p-8 bg-white overflow-hidden;
+  }
+}

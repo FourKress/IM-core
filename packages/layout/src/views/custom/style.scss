@@ -2,6 +2,6 @@
   @apply w-full h-full flex justify-center items-center;
 
   .main-container {
-    @apply flex-1 h-full bg-fill-sidebar p-4 p-b-0;
+    @apply flex flex-1 justify-start items-start h-full bg-fill-sidebar p-4 p-b-0;
   }
 }
