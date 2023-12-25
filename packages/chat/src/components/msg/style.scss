@@ -1,0 +1,5 @@
+.chat-msg-layout {
+  @apply flex-1 w-full bg-fill-grey-light p-16 p-t-8 p-b-8 overflow-y-auto;
+
+  transform: translate3d(0, 0, 0);
+}

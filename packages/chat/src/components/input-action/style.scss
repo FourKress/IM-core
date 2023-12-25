@@ -1,0 +1,55 @@
+.chat-input-action {
+  @apply w-full min-h-48px bg-fill-grey-light p-16 flex flex-col justify-between items-start
+    b-t-1 b-t-style-solid b-t-bd-base;
+
+  .action-opt {
+    @apply flex items-center font-size-12px m-b-8;
+
+    .btn {
+      @apply flex items-center justify-center rd-4 min-w-78px h-28px
+        c-fill-icon-dark  bg-white m-r-12 cursor-pointer;
+
+      .label {
+        @apply ml-4 c-text-secondary;
+      }
+
+      &:hover {
+        @apply c-primary-hover;
+
+        .label {
+          @apply c-primary-hover;
+        }
+      }
+    }
+  }
+
+  .input-panel {
+    @apply flex-1 w-full min-h-48px max-h-116px flex justify-between items-center
+      overflow-hidden relative;
+
+    .input {
+      @apply w-full min-h-48px max-h-84px overflow-y-auto p-14px p-r-112px p-l-16 line-height-18px
+        outline-none b-none font-size-12px b-1 b-style-solid b-bd-base rd-4;
+
+      &:empty::before {
+        @apply c-text-placeholder line-height-16px;
+
+        content: '请输入';
+      }
+    }
+
+    .opts {
+      @apply h-48px p-r-16 p-l-16 flex items-center absolute right-0 bottom-0;
+
+      .btn {
+        @apply mr-8 h-16px flex items-center cursor-pointer hover:c-primary-hover;
+
+        transform: translateY(-1px);
+
+        &:last-child {
+          @apply mr-0;
+        }
+      }
+    }
+  }
+}

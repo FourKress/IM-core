@@ -1,0 +1,7 @@
+.msg-notify {
+  @apply w-full h-32px line-height-32px text-center font-size-12px c-text-secondary;
+
+  .link {
+    @apply cursor-pointer c-primary;
+  }
+}

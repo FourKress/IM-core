@@ -9,12 +9,15 @@
 
     .opt-icon {
       @apply cursor-pointer ml-12 c-fill-icon-dark
-        hover:c-primary;
+        hover:c-primary-hover;
     }
 
     .btn {
-      @apply w-40px h-20px line-height-20px bg-primary text-center font-size-14px cursor-pointer
-        hover:bg-warning c-white;
+      @apply w-40px h-20px line-height-20px bg-fill-input c-text-secondary text-center font-size-12px cursor-pointer;
+
+      &.active {
+        @apply bg-black c-white;
+      }
 
       border-top-left-radius: var(--im-border-radius-6);
       border-bottom-right-radius: var(--im-border-radius-6);

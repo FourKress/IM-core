@@ -2,11 +2,11 @@
   @apply h-full flex items-center justify-start;
 
   .avatar {
-    @apply mr-8 rd-4;
+    @apply rd-4;
   }
 
   .info {
-    @apply h-full flex flex-col justify-center items-start;
+    @apply h-full ml-8 flex flex-col justify-center items-start;
 
     .name {
       @apply font-size-14px c-text-title;

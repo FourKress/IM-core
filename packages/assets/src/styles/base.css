@@ -10,7 +10,7 @@
 html,
 body,
 #app {
-  @apply min-w-1200px min-h-screen font-size-14px c-text-title line-height-[1.6];
+  @apply min-w-1200px min-h-screen font-size-14px c-text-title select-none;
 
   font-family: Alibaba-PuHuiTi-R;
   transition:

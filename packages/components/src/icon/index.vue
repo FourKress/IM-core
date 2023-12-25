@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<Props>(), {
   icon: '',
   color: '',
   renderSvg: false,
-  size: 0,
+  size: 16,
   width: 16,
   height: 16
 })

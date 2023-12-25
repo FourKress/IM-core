@@ -1,0 +1,17 @@
+.send-tips {
+  @apply w-16px h-16px rd-50%;
+
+  .progress-bar {
+    @apply w-16px h-16px p-2px overflow-hidden cursor-pointer
+      rd-50% box-border flex items-center justify-center
+      b-1 b-style-solid border-color-bd-base;
+
+    border: 1px solid #dbdee4;
+
+    .bar {
+      flex: 1;
+      height: 10px;
+      border-radius: 50%;
+    }
+  }
+}

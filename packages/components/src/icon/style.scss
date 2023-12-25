@@ -1,8 +1,8 @@
 .im-icon-container {
-  @apply inline-flex items-center justify-center;
-
   .im-icon {
     @apply overflow-hidden;
+
+    line-height: unset !important;
 
     &-svg,
     &-font {
