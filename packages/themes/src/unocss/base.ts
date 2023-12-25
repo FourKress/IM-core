@@ -1,13 +1,14 @@
 import { UserConfig } from 'unocss'
 import { Theme } from 'unocss/preset-mini'
-import {
-  themeColors,
-  themeColorLevelsEnabledKeys,
-  themeSpacing,
-  themeBorderRadius,
-  themeBoxShadow
-} from '../vars'
+
 import { toTheme } from '../utils'
+import {
+  themeBorderRadius,
+  themeBoxShadow,
+  themeColorLevelsEnabledKeys,
+  themeColors,
+  themeSpacing
+} from '../vars'
 
 export const baseConfig: UserConfig<Theme> = {
   // 需要全局生效的主题

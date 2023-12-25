@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 import LocalForage from 'localforage'
+
 import 'vue-router'
 
 export {}

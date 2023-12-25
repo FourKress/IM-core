@@ -1,13 +1,15 @@
-import '@im-core/assets'
-import 'virtual:uno.css'
-import { createApp, App } from 'vue'
-import { createPinia } from 'pinia'
-import localforage from 'localforage'
+import { App, createApp } from 'vue'
+import { ImAvatar, ImIcon } from '@im-core/components'
 import { generateRoute } from '@im-core/layout'
 import { Theme } from '@im-core/themes'
-import { ImIcon, ImAvatar } from '@im-core/components'
+import localforage from 'localforage'
+import { createPinia } from 'pinia'
 
 import AppElement from './App.vue'
+
+import 'virtual:uno.css'
+
+import '@im-core/assets'
 
 interface CreateConfig {
   routes?: []

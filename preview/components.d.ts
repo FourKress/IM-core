@@ -7,10 +7,10 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    ElAvatar: typeof import('element-plus/es')['ElAvatar']
-    ElBadge: typeof import('element-plus/es')['ElBadge']
-    ElButton: typeof import('element-plus/es')['ElButton']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
+    ElAvatar: (typeof import('element-plus/es'))['ElAvatar']
+    ElBadge: (typeof import('element-plus/es'))['ElBadge']
+    ElButton: (typeof import('element-plus/es'))['ElButton']
+    RouterLink: (typeof import('vue-router'))['RouterLink']
+    RouterView: (typeof import('vue-router'))['RouterView']
   }
 }

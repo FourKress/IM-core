@@ -1,4 +1,5 @@
-import { defineConfig, ConfigEnv } from 'vite'
+import { ConfigEnv, defineConfig } from 'vite'
+
 import { generateConfig, generateVueConfig } from '../build/scripts'
 import { absCwd, relCwd } from '../build/src'
 

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+
 // import { ImEmptyData } from '@im-core/components'
 import ImMainMenu from '../menu/index.vue'
 

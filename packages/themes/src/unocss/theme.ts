@@ -1,7 +1,8 @@
 import { UserConfig } from 'unocss'
 import { Theme } from 'unocss/preset-mini'
-import { themeVars, themeColorLevelsEnabledKeys } from '../vars'
-import { generateCssVars, cssVarsToString } from '../utils'
+
+import { cssVarsToString, generateCssVars } from '../utils'
+import { themeColorLevelsEnabledKeys, themeVars } from '../vars'
 
 /** 主题部分预设 */
 export const themeConfig: UserConfig<Theme> = {

@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import ImChatHeader from '../header/index.vue'
-import ImChatMsgLayout from '../msg/index.vue'
 import ImChatInputAction from '../input-action/index.vue'
+import ImChatMsgLayout from '../msg/index.vue'
+
 defineOptions({
   name: 'ImChat'
 })

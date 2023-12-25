@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useTheme, tinyThemeVars, themeVars } from '@im-core/themes'
 import { ImAvatar } from '@im-core/components'
+import { themeVars, tinyThemeVars, useTheme } from '@im-core/themes'
 
 defineOptions({
   name: 'ImHeader'

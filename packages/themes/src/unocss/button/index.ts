@@ -1,7 +1,8 @@
 import { UserConfig } from 'unocss'
 import { Theme } from 'unocss/preset-mini'
-import { buttonVars } from '../../vars'
+
 import { cssVarsToString, generateCssVars } from '../../utils'
+import { buttonVars } from '../../vars'
 
 export const buttonConfig: UserConfig<Theme> = {
   preflights: [

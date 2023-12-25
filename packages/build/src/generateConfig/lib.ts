@@ -1,9 +1,11 @@
-import { PackageJson } from 'type-fest'
-import { LibraryOptions, LibraryFormats, BuildOptions } from 'vite'
 import { statSync } from 'node:fs'
 import { join } from 'node:path'
+import { PackageJson } from 'type-fest'
+import { BuildOptions, LibraryFormats, LibraryOptions } from 'vite'
+
 import { absCwd, relCwd } from '../utils'
-import { getOptions, GenerateConfigOptions } from './options'
+
+import { GenerateConfigOptions, getOptions } from './options'
 
 /**
  * 获取 build.lib 产物相关配置

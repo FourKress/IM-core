@@ -1,5 +1,6 @@
 import { PackageJson } from 'type-fest'
-import { getOptions, GenerateConfigOptions } from './options'
+
+import { GenerateConfigOptions, getOptions } from './options'
 
 /**
  * 获取 build.rollupOptions.external 依赖外部化相关的配置

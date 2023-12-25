@@ -1,13 +1,15 @@
-import inspect, { Options as InspectOptions } from 'vite-plugin-inspect'
-import { visualizer, PluginVisualizerOptions } from 'rollup-plugin-visualizer'
-import vue, { Options as VueOptions } from '@vitejs/plugin-vue'
 import replace, { RollupReplaceOptions } from '@rollup/plugin-replace'
-import { PluginOption } from 'vite'
+import vue, { Options as VueOptions } from '@vitejs/plugin-vue'
+import { PluginVisualizerOptions, visualizer } from 'rollup-plugin-visualizer'
 import { PackageJson } from 'type-fest'
+import { PluginOption } from 'vite'
+import inspect, { Options as InspectOptions } from 'vite-plugin-inspect'
+
 import { isObjectLike } from '../utils'
+
 import type { GenerateConfigOptions } from './options'
-import { pluginSetPackageJson } from './pluginSetPackageJson'
 import { pluginMoveDts } from './pluginMoveDts'
+import { pluginSetPackageJson } from './pluginSetPackageJson'
 
 /** 预设插件相关配置选项 */
 export interface GenerateConfigPluginsOptions {

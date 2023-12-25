@@ -1,4 +1,4 @@
-import { toRgba, generateRgbColorLevels } from './colors'
+import { generateRgbColorLevels, toRgba } from './colors'
 
 export type DefaultPrefix = 'im-'
 /** 默认情况下，生成 CSS 变量时增加的前缀 */

@@ -1,6 +1,7 @@
 import { mergeConfigs, Preset, UserConfig } from 'unocss'
 import { Theme } from 'unocss/preset-mini'
-import { baseConfig, themeConfig, buttonConfig } from './unocss'
+
+import { baseConfig, buttonConfig, themeConfig } from './unocss'
 
 /** 组件名称与预设对象的关系表 */
 const configMaps = {

@@ -9,8 +9,8 @@
 </template>
 
 <script setup lang="ts">
-import { hello } from '@im-core/utils'
 import { bg } from '@im-core/assets'
+import { hello } from '@im-core/utils'
 
 hello('211212121')
 

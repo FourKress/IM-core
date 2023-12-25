@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory, Router, RouteRecordRaw, RouterOptions } from 'vue-router'
+
 import custom from '../views/custom/index.vue'
 
 const baseRoutes: RouteRecordRaw[] = [

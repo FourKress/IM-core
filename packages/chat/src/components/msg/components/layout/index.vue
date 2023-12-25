@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import MsgSendTips from '../send-tips/index.vue'
-import MsgCard from '../card/index.vue'
 import { computed } from 'vue'
+
+import MsgCard from '../card/index.vue'
+import MsgSendTips from '../send-tips/index.vue'
 
 defineOptions({
   name: 'MsgPanel'

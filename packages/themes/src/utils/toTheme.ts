@@ -1,4 +1,4 @@
-import { getCssVar, DEFAULT_PREFIX, DefaultPrefix, GenerateCssVarsOptions } from './cssVars'
+import { DEFAULT_PREFIX, DefaultPrefix, GenerateCssVarsOptions, getCssVar } from './cssVars'
 
 /**
  * 主题生成选项

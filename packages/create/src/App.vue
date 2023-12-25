@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
+
 import ImMainLayout from './components/layout/index.vue'
+
 defineOptions({
   name: 'ImApp'
 })

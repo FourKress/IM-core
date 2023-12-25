@@ -1,10 +1,12 @@
-import { mergeConfig, UserConfig } from 'vite'
+import transformerDirectives from '@unocss/transformer-directives'
 import { presetUno, PresetUnoOptions } from 'unocss/preset-uno'
 import unocss from 'unocss/vite'
-import transformerDirectives from '@unocss/transformer-directives'
+import { mergeConfig, UserConfig } from 'vite'
+
 import { ImCorePreset, ImCorePresetOptions } from '../../themes/src/unoPreset'
+import { absCwd, GenerateConfigOptions, relCwd } from '../src'
+
 import { generateConfig } from './common'
-import { absCwd, relCwd, GenerateConfigOptions } from '../src'
 
 /** 拓展构建选项 */
 export interface GenerateVueConfigOptions extends GenerateConfigOptions {

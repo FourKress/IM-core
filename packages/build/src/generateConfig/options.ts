@@ -1,4 +1,5 @@
 import { PackageJson } from 'type-fest'
+
 import type { GenerateConfigPluginsOptions } from './plugins'
 
 /** 自定义构建选项 */

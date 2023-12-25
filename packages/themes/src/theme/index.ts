@@ -1,7 +1,8 @@
-import { inject, App, Plugin } from 'vue'
+import { App, inject, Plugin } from 'vue'
 import { isObjectLike } from '@im-core/utils'
+
 import { generateCssVars } from '../utils'
-import { themeColorLevelsEnabledKeys, ImCoreCssVarsConfig } from '../vars'
+import { ImCoreCssVarsConfig, themeColorLevelsEnabledKeys } from '../vars'
 
 const THEME_PROVIDE_KEY = '__ImUITheme__'
 

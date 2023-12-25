@@ -1,10 +1,11 @@
-import { PluginOption } from 'vite'
-import { PackageJson } from 'type-fest'
 import { basename } from 'node:path'
-import { isObjectLike, isFunction } from '../utils'
-import { absCwd, relCwd, writeJsonFile } from '../utils'
+import { PackageJson } from 'type-fest'
+import { PluginOption } from 'vite'
+
+import { absCwd, isFunction, isObjectLike, relCwd, writeJsonFile } from '../utils'
+
 import { getOutFileName, resolveEntry } from './lib'
-import { getOptions, GenerateConfigOptions } from './options'
+import { GenerateConfigOptions, getOptions } from './options'
 
 /**
  * 自定义插件，实现对 package.json 内容的修改与回写。

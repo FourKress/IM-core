@@ -1,9 +1,11 @@
-import { PluginOption } from 'vite'
-import { getParsedCommandLineOfConfigFile, sys } from 'typescript'
 import { cp } from 'node:fs/promises'
-import { getOptions, GenerateConfigOptions } from './options'
+import { getParsedCommandLineOfConfigFile, sys } from 'typescript'
+import { PluginOption } from 'vite'
+
 import { absCwd, usePathAbs, usePathRel } from '../utils'
+
 import { resolveEntry } from './lib'
+import { GenerateConfigOptions, getOptions } from './options'
 
 /** 自定义插件，将 d.ts 产物从集中目录移动到子包的产物目录 */
 export function pluginMoveDts(options: GenerateConfigOptions = {}): PluginOption {

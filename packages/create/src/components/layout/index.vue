@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { RouterView, useRoute } from 'vue-router'
 import { computed } from 'vue'
-import ImHeader from '../header/index.vue'
+import { RouterView, useRoute } from 'vue-router'
 import { ImMainLayout } from '@im-core/layout'
+
+import ImHeader from '../header/index.vue'
 
 defineOptions({
   name: 'ImMain'

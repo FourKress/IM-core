@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+
 defineOptions({
   name: 'ImButton'
 })
-import { computed } from 'vue'
 
 interface Props {
   /** 按钮的类型 */

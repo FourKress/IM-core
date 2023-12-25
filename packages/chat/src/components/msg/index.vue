@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import MsgTimesTransform from './components/times-transform/index.vue'
-import MsgNotify from './components/notify/index.vue'
 import MsgLayout from './components/layout/index.vue'
+import MsgNotify from './components/notify/index.vue'
+import MsgTimesTransform from './components/times-transform/index.vue'
 
 defineOptions({
   name: 'ImChatMsgLayout'

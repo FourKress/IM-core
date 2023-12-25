@@ -1,10 +1,12 @@
-import { mergeConfig, UserConfig } from 'vite'
 import { PackageJson } from 'type-fest'
-import { readJsonFile, absCwd } from '../utils'
-import { getOptions, GenerateConfigOptions } from './options'
-import { getPlugins } from './plugins'
+import { mergeConfig, UserConfig } from 'vite'
+
+import { absCwd, readJsonFile } from '../utils'
+
 import { getExternal } from './external'
 import { getLib } from './lib'
+import { GenerateConfigOptions, getOptions } from './options'
+import { getPlugins } from './plugins'
 
 /**
  * 生成 Vite 构建配置
@@ -44,9 +46,9 @@ export async function generateConfig(
 }
 
 // 导出其他模块
-export * from './plugins'
-export * from './options'
-export * from './lib'
 export * from './external'
+export * from './lib'
+export * from './options'
 export * from './pluginMoveDts'
+export * from './plugins'
 export * from './pluginSetPackageJson'

@@ -10,8 +10,7 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   notify: ''
 })
-console.log(props);
-
+console.log(props)
 </script>
 
 <template>
