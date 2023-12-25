@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import MsgLayout from './components/layout/index.vue'
 import MsgNotify from './components/notify/index.vue'
 import MsgTimesTransform from './components/times-transform/index.vue'
@@ -39,6 +39,6 @@ defineOptions({
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @use 'style';
 </style>

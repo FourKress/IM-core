@@ -21,8 +21,8 @@ interface CreateConfig {
 const createIMApp = async (config: CreateConfig = {}): Promise<App> => {
   const { routes = [] } = config
 
-  window.$lanshuStore = localforage.createInstance({
-    name: 'lanshuStore'
+  window.$ImStore = localforage.createInstance({
+    name: 'ImStore'
   })
   window.$localStore = localforage.createInstance({
     name: 'localStore'

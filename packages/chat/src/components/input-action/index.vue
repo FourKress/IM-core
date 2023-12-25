@@ -1,4 +1,6 @@
-<script setup lang="ts">
+<script lang="ts" setup>
+import { ref } from 'vue'
+
 defineOptions({
   name: 'ImChatInputAction'
 })
@@ -12,11 +14,29 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 console.log(props)
+
+const chatInputClass = ref('')
+const chatInputElement = ref<any>(null)
+const chatInputHiddenElement = ref<any>(null)
+
+const handleInput = () => {
+  let textWidth = 0
+  let textHeight = 0
+  if (chatInputHiddenElement.value) {
+    chatInputHiddenElement.value.innerHTML = chatInputElement.value?.innerHTML || ''
+    const { width, height } = chatInputHiddenElement.value.getBoundingClientRect()
+
+    textWidth = width
+    textHeight = height
+  }
+
+  chatInputClass.value = textWidth > 274 || textHeight >= 20 ? 'expand' : ''
+}
 </script>
 
 <template>
   <div class="chat-input-action">
-    <div class="action-opt" v-if="showTopAction">
+    <div v-if="showTopAction" class="action-opt">
       <div class="btn">
         <ImIcon :size="14" icon="im-icon-kuaijiehuifu" />
         <span class="label">结束咨询</span>
@@ -26,8 +46,9 @@ console.log(props)
         <span class="label">继续办件</span>
       </div>
     </div>
-    <div class="input-panel">
-      <div contenteditable="true" class="input" placeholder="请输入" />
+    <div :class="chatInputClass" class="chat-input-panel">
+      <div ref="chatInputElement" class="chat-input" contenteditable="true" @input="handleInput" />
+      <div ref="chatInputHiddenElement" class="input-hidden"></div>
       <div class="opts c-fill-icon-dark">
         <div class="btn">
           <ImIcon icon="im-icon-a-biaoqing1" />
@@ -46,6 +67,6 @@ console.log(props)
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @use 'style';
 </style>

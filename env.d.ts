@@ -7,7 +7,7 @@ export {}
 
 declare global {
   interface Window {
-    $lanshuStore: LocalForage
+    $ImStore: LocalForage
     $localStore: LocalForage
     $chatStore: LocalForage
   }
