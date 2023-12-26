@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { ref } from 'vue'
 import { ImAvatar } from '@im-core/components'
 import { themeVars, tinyThemeVars, useTheme } from '@im-core/themes'
@@ -22,7 +22,6 @@ function switchGlobalTheme() {
 
   const el = document.documentElement
   const myColorPrimary = getComputedStyle(el).getPropertyValue(`--im-color-primary`)
-  console.log(`rgba(${myColorPrimary} / 1)`)
   el.style.setProperty('--el-color-primary', `rgba(${myColorPrimary} / 1)`)
 }
 
@@ -51,27 +50,27 @@ const handleSelectMenu = (id: number): void => {
   <header class="im-header">
     <div class="user" @click="switchGlobalTheme">
       <ImAvatar :size="36" src="">
-        <template v-slot:name>
+        <template #name>
           <span class="name">张文文</span>
         </template>
-        <template v-slot:tips>
+        <template #tips>
           <span class="tips">重庆市-永川区</span>
         </template>
       </ImAvatar>
     </div>
     <div class="menu">
       <div
-        class="menu-item"
-        @click="handleSelectMenu(item.id)"
-        :class="defaultSelectId === item.id && 'menu-active'"
         v-for="item in menu"
-        :key="item.id">
+        :key="item.id"
+        :class="defaultSelectId === item.id && 'menu-active'"
+        class="menu-item"
+        @click="handleSelectMenu(item.id)">
         {{ item.name }}
       </div>
     </div>
   </header>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @use 'style';
 </style>

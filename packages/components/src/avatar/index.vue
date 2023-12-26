@@ -1,9 +1,14 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { computed } from 'vue'
 
 defineOptions({
   name: 'ImAvatar'
 })
+
+defineSlots<{
+  name?: () => any
+  tips: () => any
+}>()
 
 // defineProps({
 //   ...avatarProps,
@@ -16,7 +21,7 @@ defineOptions({
 // })
 
 interface Props {
-  name: string
+  name?: string
   tips?: string
   badge?: number
   showInfo?: boolean
@@ -43,25 +48,24 @@ const style = computed(() => {
     height: value
   }
 })
-console.log(props)
 </script>
 
 <template>
   <div class="im-avatar-container">
-    <div class="avatar" :style="style">
-      <el-badge :value="badge" :hidden="!badge">
-        <el-avatar :size="size" :src="src" :shape="shape" />
+    <div :style="style" class="avatar">
+      <el-badge :hidden="!badge" :value="badge">
+        <el-avatar :shape="shape" :size="size" :src="src" />
       </el-badge>
     </div>
-    <div class="info" v-if="showInfo">
-      <span class="name" v-if="name">{{ name }}</span>
-      <slot name="name" v-else></slot>
-      <span class="tips" v-if="tips">{{ tips }}</span>
-      <slot name="tips" v-else></slot>
+    <div v-if="showInfo" class="info">
+      <span v-if="name" class="name">{{ name }}</span>
+      <slot v-else name="name"></slot>
+      <span v-if="tips" class="tips">{{ tips }}</span>
+      <slot v-else name="tips"></slot>
     </div>
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @use 'style';
 </style>

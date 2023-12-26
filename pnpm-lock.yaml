@@ -150,7 +150,11 @@ importers:
         specifier: '>=3.0.0'
         version: 3.3.12(typescript@5.3.3)
 
-  packages/chat: {}
+  packages/chat:
+    dependencies:
+      '@im-core/components':
+        specifier: workspace:^
+        version: link:../components
 
   packages/components:
     dependencies:

@@ -36,11 +36,11 @@ const handleRender = (props: Props): Promise<any> => {
 }
 export const ImContextMenu = {
   install: (app: App) => {
-    app.config.globalProperties.$ImContextMenu = (props: Props) => {
-      return handleRender(props)
+    app.config.globalProperties.$ImContextMenu = async (props: Props) => {
+      await handleRender(props)
     }
   },
-  open: (props: Props): Promise<any> => {
-    return handleRender(props)
+  open: async (props: Props) => {
+    await handleRender(props)
   }
 }

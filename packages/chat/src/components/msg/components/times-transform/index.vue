@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { computed } from 'vue'
 
 defineOptions({
@@ -15,8 +15,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const timesText = computed(() => {
   const { timestamp } = props
-  console.log(timestamp)
-  return '21:30'
+  return timestamp
 })
 </script>
 
@@ -26,6 +25,6 @@ const timesText = computed(() => {
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @use 'style';
 </style>

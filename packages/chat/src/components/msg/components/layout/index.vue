@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { computed } from 'vue'
 
 import MsgCard from '../card/index.vue'
@@ -20,13 +20,12 @@ const classes = computed(() => {
   const { self } = props
   return self ? 'right' : 'left'
 })
-console.log(props)
 </script>
 
 <template>
-  <div class="msg-panel" :class="classes">
+  <div :class="classes" class="msg-panel">
     <div class="avatar">
-      <ImAvatar src="" :size="24" :showInfo="!self">
+      <ImAvatar :showInfo="!self" :size="24" src="">
         <template v-slot:name>
           <span class="c-text-subtitle">手打的</span>
         </template>
@@ -44,6 +43,6 @@ console.log(props)
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @use 'style';
 </style>

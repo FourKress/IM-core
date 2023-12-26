@@ -1,5 +1,8 @@
 <script lang="ts" setup>
-import { getCurrentInstance, inject, onMounted, ref } from 'vue'
+import { inject, onMounted, ref } from 'vue'
+import { ImContextMenu } from '@im-core/components'
+
+import useCurrentInstance from '../../util'
 
 defineOptions({
   name: 'ImChatHeader'
@@ -14,20 +17,22 @@ const handleSelect = () => {
   // const { proxy } = getCurrentInstance()
   // proxy && proxy.$ImContextMenu()
 
-  // ImContextMenu.open({
-  //   visible: false
-  // })
-  // .then(() => {
-  //   console.log(111)
-  // })
-  // .catch(() => {
-  //   console.log(22)
-  // })
+  ImContextMenu.open({
+    visible: false
+  })
+  //   .then(() => {
+  //     console.log(111)
+  //   })
+  //   .catch(() => {
+  //     console.log(22)
+  //   })
 }
 
 onMounted(() => {
-  const { proxy } = getCurrentInstance()
-  proxy && proxy.$ImContextMenu()
+  // console.log(getCurrentInstance())
+  const { proxy } = useCurrentInstance()
+  console.log(proxy)
+  // proxy.$ImContextMenu({})
 })
 </script>
 

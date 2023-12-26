@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { computed } from 'vue'
 
 defineOptions({
@@ -9,9 +9,10 @@ interface Msg {
   sendState: number
   receiptUserList: string[]
 }
+
 interface Props {
-  msg: Msg
-  realMemberCount: number
+  msg?: Msg
+  realMemberCount?: number
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -38,15 +39,15 @@ const percent = computed(() => {
 <template>
   <div class="send-tips">
     <div
-      class="progress-bar"
       :style="{
         borderColor: msg.receiptUserList.length ? '#00C476' : '#DBDEE4'
-      }">
+      }"
+      class="progress-bar">
       <div
-        class="bar"
         :style="{
           background: `conic-gradient(#00c476 0, #00c476 ${percent}%, #fff ${percent}%, #fff)`
-        }"></div>
+        }"
+        class="bar"></div>
     </div>
     <!--    <template v-if="msg.sendState !== 1">-->
     <!--      <img class="loading-icon" v-if="msg.sendState === 0" :src="LsAssets.loadingIcon" alt="" />-->
@@ -57,6 +58,6 @@ const percent = computed(() => {
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @use 'style';
 </style>

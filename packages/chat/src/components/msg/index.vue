@@ -10,7 +10,7 @@ defineOptions({
 
 <template>
   <div class="chat-msg-layout">
-    <MsgTimesTransform timestamp="123" />
+    <MsgTimesTransform timestamp="12:22" />
     <MsgNotify notify="123123" />
 
     <MsgLayout :self="true" />

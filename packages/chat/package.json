@@ -22,5 +22,8 @@
     },
     "./*": "./*",
     "./style.css": "./dist/style.css"
+  },
+  "dependencies": {
+    "@im-core/components": "workspace:^"
   }
 }

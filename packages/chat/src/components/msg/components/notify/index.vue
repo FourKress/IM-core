@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 defineOptions({
   name: 'MsgNotify'
 })
@@ -7,10 +7,9 @@ interface Props {
   notify: string
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   notify: ''
 })
-console.log(props)
 </script>
 
 <template>
@@ -21,6 +20,6 @@ console.log(props)
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @use 'style';
 </style>
