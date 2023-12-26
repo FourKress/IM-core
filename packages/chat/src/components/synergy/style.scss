@@ -1,15 +1,68 @@
 .chat-synergy-container {
-  @apply w-440px h-full rd-t-4 overflow-hidden bg-fill-grey-light
-  flex flex-col items-center m-l-4;
+  @apply w-440px
+  h-full
+  rd-t-4
+  overflow-hidden
+  bg-fill-grey-light
+  flex
+  flex-col
+  items-center
+  m-l-4;
 
   .synergy-header {
-    @apply w-full h-50px min-h-50px bg-white
-    p-l-16 p-r-16
-    flex justify-between items-center
-    border-b-1px border-b-solid border-color-bd-base font-bold;
+    @apply w-full
+    h-50px
+    min-h-50px
+    bg-white
+    p-l-16
+    p-r-16
+    flex
+    justify-between
+    items-center
+    border-b-1px
+    border-b-solid
+    border-color-bd-base
+    font-bold;
+
+    .synergy-list {
+      @apply flex
+      justify-end
+      items-center;
+
+      .item {
+        @apply w-32px
+        h-32px
+        flex
+        justify-center
+        items-center
+        m-l-8
+        cursor-pointer
+        bg-warning
+        rd-4;
+
+        &.active {
+          @apply b-1
+          b-style-solid
+          b-primary;
+        }
+
+        &.btn {
+          @apply b-1
+          b-primary
+          b-style-dashed
+          bg-transparent
+          flex
+          items-center
+          justify-center;
+        }
+      }
+    }
   }
 
   .synergy-main {
-    @apply flex-1 p-8 bg-white overflow-hidden;
+    @apply flex-1
+    p-8
+    bg-white
+    overflow-hidden;
   }
 }

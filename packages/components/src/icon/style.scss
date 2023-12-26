@@ -1,16 +1,20 @@
 .im-icon-container {
   .im-icon {
-    @apply overflow-hidden;
+    @apply flex
+    items-center
+    overflow-hidden;
 
     line-height: unset !important;
 
-    &-svg,
     &-font {
-      @apply inline-block align-middle c-inherit;
+      @apply font-size-16px
+      line-height-16px
+      c-inherit;
     }
 
-    &-font {
-      @apply font-size-16px line-height-16px c-inherit;
+    &-svg {
+      @apply align-middle
+      c-inherit;
     }
   }
 }

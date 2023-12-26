@@ -4,15 +4,20 @@
 *,
 *::before,
 *::after {
-  @apply box-border m0;
+  @apply box-border
+  m0;
 }
 
 html,
 body,
 #app {
-  @apply min-w-1200px min-h-screen font-size-14px c-text-title select-none;
+  @apply min-w-1200px
+  min-h-screen
+  font-size-14px
+  c-text-title
+  select-none;
 
-  font-family: Alibaba-PuHuiTi-R;
+  font-family: Alibaba-PuHuiTi-R, 'Microsoft YaHei', serif;
   transition:
     color 0.5s,
     background-color 0.5s;
@@ -52,10 +57,16 @@ body,
 
 ::-webkit-scrollbar-track {
   display: none;
-} /* 滚动条的滑轨背景颜色 */
+}
+
+/* 滚动条的滑轨背景颜色 */
 ::-webkit-scrollbar-button {
   display: none;
-} /* 滑轨两头的监听按钮颜色 */
+}
+
+/* 滑轨两头的监听按钮颜色 */
 ::-webkit-scrollbar-corner {
   background-color: transparent;
-} /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+}
+
+/* 横向滚动条和纵向滚动条相交处尖角的颜色 */

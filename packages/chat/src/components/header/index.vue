@@ -28,8 +28,10 @@ const handleSelect = () => {
       <div v-if="!synergy" :class="isActive && 'active'" class="btn" @click="handleSelect">
         协同
       </div>
+      <ImIcon class="opt-icon" icon="im-icon-huiyi"></ImIcon>
       <ImIcon class="opt-icon" icon="im-icon-shipintonghua"></ImIcon>
       <ImIcon class="opt-icon" icon="im-icon-gengduo"></ImIcon>
+      <ImIcon v-if="synergy" :size="20" class="opt-icon" icon="im-icon-guanbi"></ImIcon>
     </div>
   </div>
 </template>

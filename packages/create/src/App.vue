@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { onMounted } from 'vue'
 
 import ImMainLayout from './components/layout/index.vue'
@@ -21,11 +21,10 @@ onMounted(() => {
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 #im-app {
-  box-sizing: border-box;
-  height: 100vh;
-  overflow: hidden;
+  @apply box-border h-100vh overflow-hidden;
+
   transform: translate3d(0, 0, 0);
 }
 </style>

@@ -1,16 +1,34 @@
 .chat-input-action {
-  @apply w-full min-h-48px bg-fill-grey-light p-16 flex flex-col justify-between items-start;
-  //b-t-1 b-t-style-solid b-t-bd-base
+  @apply w-full
+  min-h-48px
+  bg-fill-grey-light
+  p-16
+  flex
+  flex-col
+  justify-between
+  items-start;
 
   .action-opt {
-    @apply flex items-center font-size-12px m-b-8;
+    @apply flex
+    items-center
+    font-size-12px
+    m-b-8;
 
     .btn {
-      @apply flex items-center justify-center rd-4 min-w-78px h-28px
-      c-fill-icon-dark  bg-white m-r-12 cursor-pointer;
+      @apply flex
+      items-center
+      justify-center
+      rd-4
+      min-w-78px
+      h-28px
+      c-fill-icon-dark
+      bg-white
+      m-r-12
+      cursor-pointer;
 
       .label {
-        @apply ml-4 c-text-secondary;
+        @apply ml-4
+        c-text-secondary;
       }
 
       &:hover {
@@ -24,28 +42,56 @@
   }
 
   .chat-input-panel {
-    @apply flex-1 w-full min-h-48px max-h-116px flex flex-col justify-between items-center
-    overflow-hidden relative b-1 b-style-solid b-bd-base rd-4 bg-white;
+    @apply flex-1
+    w-full
+    min-h-48px
+    max-h-116px
+    flex
+    flex-col
+    justify-between
+    items-center
+    overflow-hidden
+    relative
+    b-1
+    b-style-solid
+    b-bd-base
+    rd-4
+    bg-white;
 
     .chat-input {
-      @apply w-full min-h-48px max-h-84px overflow-y-auto line-height-18px
-      outline-none b-none font-size-12px b-style-solid b-t-14 b-b-14 p-r-112px p-l-16;
-
-      border-color: transparent;
+      @apply w-full
+      min-h-48px
+      max-h-84px
+      overflow-y-auto
+      line-height-18px
+      outline-none
+      b-none
+      font-size-12px
+      b-style-solid
+      b-y-14
+      p-r-112px
+      p-l-16
+      b-white;
 
       &:empty::before {
-        @apply c-text-placeholder line-height-16px;
-
-        content: '请输入';
+        @apply c-text-placeholder
+        line-height-16px
+        content-['请输入'];
       }
     }
 
     .input-hidden {
-      @apply font-size-12px line-height-18px absolute z--1;
+      @apply font-size-12px
+      line-height-18px
+      absolute
+      z--1;
     }
 
     &::after {
-      @apply content-empty w-full h-34px hidden;
+      @apply content-empty
+      w-full
+      h-34px
+      hidden;
     }
 
     &.active {
@@ -67,10 +113,21 @@
     }
 
     .opts {
-      @apply h-48px p-r-16 p-l-16 flex items-center absolute right-0 bottom-0px;
+      @apply h-48px
+      p-x-16
+      flex
+      items-center
+      absolute
+      right-0
+      bottom-0px;
 
       .btn {
-        @apply mr-8 h-16px flex items-center cursor-pointer hover:c-primary;
+        @apply mr-8
+        h-16px
+        flex
+        items-center
+        cursor-pointer
+        hover:c-primary;
 
         transform: translateY(-1px);
 

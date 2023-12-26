@@ -1,19 +1,32 @@
 .im-avatar-container {
-  @apply h-full flex items-center justify-start;
+  @apply flex
+  items-center
+  justify-start;
 
   .avatar {
     @apply rd-4;
+
+    .el-badge {
+      @apply h-full;
+    }
   }
 
   .info {
-    @apply h-full ml-8 flex flex-col justify-center items-start;
+    @apply h-full
+    ml-8
+    flex
+    flex-col
+    justify-center
+    items-start;
 
     .name {
-      @apply font-size-14px c-text-title;
+      @apply font-size-14px
+      c-text-title;
     }
 
     .tips {
-      @apply font-size-12px c-text-secondary;
+      @apply font-size-12px
+      c-text-secondary;
     }
   }
 }

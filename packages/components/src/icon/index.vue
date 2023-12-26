@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { computed } from 'vue'
 
 defineOptions({
@@ -7,16 +7,14 @@ defineOptions({
 
 interface Props {
   icon: string
-  color?: string
   renderSvg?: boolean
-  size?: string | number
-  width?: string | number
-  height?: string | number
+  size?: number
+  width?: number
+  height?: number
 }
 
 const props = withDefaults(defineProps<Props>(), {
   icon: '',
-  color: '',
   renderSvg: false,
   size: 16,
   width: 16,
@@ -30,20 +28,17 @@ const iconClass = computed(() => {
 })
 
 const svgStyle = computed(() => {
-  const { color, width, height } = props
+  const { width, height } = props
   return {
-    color,
-    width,
-    height
+    width: `${width}px`,
+    height: `${height}px`
   }
 })
 
 const iconStyle = computed(() => {
-  const { size, color } = props
-  console.log(color)
+  const { size } = props
   return {
-    fontSize: size ? `${size}px` : '',
-    color
+    fontSize: size ? `${size}px` : ''
   }
 })
 
@@ -61,22 +56,22 @@ const handleClick = () => {
     <!-- svg -->
     <svg
       v-if="renderSvg"
+      :style="svgStyle"
       aria-hidden="true"
       class="im-icon im-icon-svg"
-      :style="svgStyle"
       @click="handleClick">
       <use :xlink:href="`#${iconClass}`"></use>
     </svg>
     <!-- class模式 -->
     <i
       v-else
-      class="im-icon im-icon-font"
       :class="iconClass"
       :style="iconStyle"
+      class="im-icon im-icon-font"
       @click="handleClick"></i>
   </span>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @use 'style';
 </style>

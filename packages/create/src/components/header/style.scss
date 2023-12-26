@@ -1,35 +1,52 @@
 .im-header {
-  @apply w-full h-48px bg-primary relative;
+  @apply w-full
+  h-48px
+  bg-primary
+  relative;
 
   .user {
-    @apply h-36px absolute top-50% left-8 cursor-pointer;
+    @apply h-36px
+    absolute
+    top-50%
+    left-8
+    cursor-pointer;
 
     transform: translateY(-50%);
 
     .name {
-      @apply font-size-14px c-white;
+      @apply font-size-14px
+      c-white;
     }
 
     .tips {
-      @apply font-size-12px c-white/70;
+      @apply font-size-12px
+      c-white/70;
     }
   }
 
   .menu {
-    @apply h-full flex justify-center items-center line-height-48px;
+    @apply h-full
+    flex
+    justify-center
+    items-center
+    line-height-48px;
 
     .menu-item {
-      @apply cursor-pointer w-76px flex items-center justify-center bg-primary c-white/80
-        hover:c-white;
+      @apply cursor-pointer
+      w-76px
+      flex
+      items-center
+      justify-center
+      bg-primary
+      c-white/80
+      hover:c-white;
 
       &:hover {
-        background-color: #4272dd;
+        @apply bg-#4272dd;
       }
 
       &.menu-active {
-        background-color: #4272dd;
-
-        @apply c-white;
+        @apply c-white bg-#4272dd;
       }
     }
   }

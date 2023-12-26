@@ -1,8 +1,18 @@
 .chat-container {
-  @apply max-w-440px w-full h-full rd-t-4 overflow-hidden bg-fill-grey-light
-  flex flex-col items-center;
+  @apply max-w-440px
+  w-full
+  h-full
+  rd-t-4
+  overflow-hidden
+  bg-fill-grey-light
+  flex
+  flex-col
+  items-center;
 
   &.synergy {
-    @apply rd-4 b-style-solid b-1 b-bd-base;
+    @apply rd-4
+    b-style-solid
+    b-1
+    b-bd-base;
   }
 }

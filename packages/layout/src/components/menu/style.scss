@@ -1,18 +1,42 @@
 .im-menu {
-  @apply w-48px h-full bg-fill-sidebar p-t-16 p-b-16
-    overflow-hidden flex flex-col items-center;
+  @apply w-48px
+  h-full
+  bg-fill-sidebar
+  p-y-16
+  overflow-hidden
+  flex
+  flex-col
+  items-center;
 
   .menu {
-    @apply flex-1 w-full overflow-y-auto;
+    @apply flex-1
+    w-full
+    overflow-y-auto;
 
     .menu-item {
-      @apply cursor-pointer w-full h-48px flex flex-col justify-center items-center font-size-12px c-text-secondary hover:c-primary;
+      @apply cursor-pointer
+      w-full
+      h-48px
+      flex
+      flex-col
+      justify-center
+      items-center
+      font-size-12px
+      c-text-secondary
+      hover:c-primary;
 
       &.menu-active {
-        @apply relative c-primary;
+        @apply relative
+        c-primary;
 
         &::before {
-          @apply h-full w-2px content-empty bg-primary absolute top-0 left-0;
+          @apply h-full
+          w-2px
+          content-empty
+          bg-primary
+          absolute
+          top-0
+          left-0;
         }
       }
 

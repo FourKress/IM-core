@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { ref } from 'vue'
 
 defineOptions({
@@ -35,20 +35,22 @@ const isSelected = (id: number): boolean => {
   <div class="im-menu">
     <div class="menu">
       <div
-        class="menu-item"
-        @click="handleSelectMenu(item.id)"
-        :class="isSelected(item.id) && 'menu-active'"
         v-for="item in menu"
-        :key="item.id">
+        :key="item.id"
+        :class="isSelected(item.id) && 'menu-active'"
+        class="menu-item"
+        @click="handleSelectMenu(item.id)">
         <ImIcon
+          :height="16"
           :icon="isSelected(item.id) ? item.activeIcon : item.icon"
-          :renderSvg="isSelected(item.id)" />
+          :renderSvg="isSelected(item.id)"
+          :width="16" />
         <span class="label"> {{ item.name }}</span>
       </div>
     </div>
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @use 'style';
 </style>

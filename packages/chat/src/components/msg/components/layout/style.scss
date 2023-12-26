@@ -1,24 +1,39 @@
 .msg-panel {
-  @apply flex flex-col justify-center items-end justify-start p-t-8 p-b-8;
+  @apply flex
+  flex-col
+  justify-center
+  items-end
+  justify-start
+  p-y-8;
 
   .avatar {
-    @apply cursor-pointer flex items-center;
+    @apply cursor-pointer
+    flex
+    items-center;
 
     .tips {
-      display: none;
-
-      @apply p-l-8 font-size-12px c-text-secondary;
+      @apply p-l-8
+      font-size-12px
+      c-text-secondary
+      hidden;
     }
   }
 
   .msg-panel-main {
-    @apply w-[calc(100%-48px)] m-t-8 m-h-36px line-height-20px rd-4
-      bg-fill-grey-dark p-8 relative;
-
-    border-bottom-right-radius: 0;
+    @apply w-[calc(100%-48px)]
+    m-t-8
+    m-h-36px
+    line-height-20px
+    rd-4
+    bg-fill-grey-dark
+    p-8
+    relative
+    rd-br-0;
 
     .tips {
-      @apply absolute bottom-0 left--24px;
+      @apply absolute
+      bottom-0
+      left--24px;
     }
   }
 
@@ -26,9 +41,7 @@
     @apply items-start;
 
     .msg-panel-main {
-      @apply bg-white  rd-4;
-
-      border-bottom-left-radius: 0;
+      @apply bg-white  rd-4 rd-bl-0;
 
       .tips {
         @apply right--24px left-unset;
@@ -38,7 +51,7 @@
     .avatar {
       &:hover {
         .tips {
-          display: block;
+          @apply block;
         }
       }
     }
