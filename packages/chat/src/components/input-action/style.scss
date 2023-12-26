@@ -127,9 +127,8 @@
         flex
         items-center
         cursor-pointer
-        hover:c-primary;
-
-        transform: translateY(-1px);
+        hover:c-primary
+        translate-y--1px;
 
         &:last-child {
           @apply mr-0;

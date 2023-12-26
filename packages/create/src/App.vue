@@ -23,8 +23,9 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 #im-app {
-  @apply box-border h-100vh overflow-hidden;
-
-  transform: translate3d(0, 0, 0);
+  @apply box-border
+  h-100vh
+  overflow-hidden
+  transform-gpu;
 }
 </style>

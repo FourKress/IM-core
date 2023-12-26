@@ -9,9 +9,8 @@
     absolute
     top-50%
     left-8
-    cursor-pointer;
-
-    transform: translateY(-50%);
+    cursor-pointer
+    translate-y--50%;
 
     .name {
       @apply font-size-14px
