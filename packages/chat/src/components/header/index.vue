@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { inject, ref } from 'vue'
+import { getCurrentInstance, inject, onMounted, ref } from 'vue'
 
 defineOptions({
   name: 'ImChatHeader'
@@ -9,10 +9,26 @@ const isActive = ref(false)
 
 const synergy = inject('synergy', false)
 
-console.log(synergy, 'synergy')
 const handleSelect = () => {
   isActive.value = !isActive.value
+  // const { proxy } = getCurrentInstance()
+  // proxy && proxy.$ImContextMenu()
+
+  // ImContextMenu.open({
+  //   visible: false
+  // })
+  // .then(() => {
+  //   console.log(111)
+  // })
+  // .catch(() => {
+  //   console.log(22)
+  // })
 }
+
+onMounted(() => {
+  const { proxy } = getCurrentInstance()
+  proxy && proxy.$ImContextMenu()
+})
 </script>
 
 <template>

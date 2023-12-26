@@ -1,5 +1,5 @@
 import { App, createApp } from 'vue'
-import { ImAvatar, ImIcon } from '@im-core/components'
+import { ImAvatar, ImContextMenu, ImIcon } from '@im-core/components'
 import { generateRoute } from '@im-core/layout'
 import { Theme } from '@im-core/themes'
 import localforage from 'localforage'
@@ -83,6 +83,8 @@ const createIMApp = async (config: CreateConfig = {}): Promise<App> => {
   const app = createApp(AppElement)
 
   app.component(ImIcon.name, ImIcon).component(ImAvatar.name, ImAvatar)
+
+  app.use(ImContextMenu)
 
   app.use(createPinia())
   app.use(generateRoute(routes))
