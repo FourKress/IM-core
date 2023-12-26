@@ -24,13 +24,17 @@
     border-color-bd-base
     font-bold;
 
-    .synergy-list {
+    .synergy-opt {
       @apply flex
+      items-center
       justify-end
-      items-center;
+      flex-1
+      overflow-x-auto;
 
       .item {
-        @apply w-32px
+        @apply flex-basis-32px
+        flex-shrink-0
+        w-32px
         h-32px
         flex
         justify-center
@@ -63,6 +67,11 @@
     @apply flex-1
     p-8
     bg-white
-    overflow-hidden;
+    overflow-y-auto;
+
+    .chat-panel {
+      @apply bg-white
+      m-b-8px;
+    }
   }
 }

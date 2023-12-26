@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { provide } from 'vue'
+
 import ImChatHeader from '../header/index.vue'
 import ImChatInputAction from '../input-action/index.vue'
 import ImChatMsgLayout from '../msg/index.vue'
@@ -11,16 +13,18 @@ interface Props {
   synergy?: boolean
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   synergy: false
 })
+
+provide('synergy', props.synergy)
 </script>
 
 <template>
   <div :class="synergy && 'synergy'" class="chat-container">
-    <ImChatHeader :synergy="synergy" />
+    <ImChatHeader />
     <ImChatMsgLayout />
-    <ImChatInputAction :showTopAction="true" />
+    <ImChatInputAction />
   </div>
 </template>
 

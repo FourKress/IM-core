@@ -1,20 +1,15 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { inject, ref } from 'vue'
 
 defineOptions({
   name: 'ImChatHeader'
 })
 
-interface Props {
-  synergy?: boolean
-}
-
-withDefaults(defineProps<Props>(), {
-  synergy: false
-})
-
 const isActive = ref(false)
 
+const synergy = inject('synergy', false)
+
+console.log(synergy, 'synergy')
 const handleSelect = () => {
   isActive.value = !isActive.value
 }

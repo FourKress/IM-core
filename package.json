@@ -20,6 +20,7 @@
     "build:run": "pnpm -F preview run preview"
   },
   "dependencies": {
+    "@vueuse/core": "^10.7.0",
     "localforage": "^1.10.0",
     "pinia": "^2.1.7",
     "vue": "^3.3.4",

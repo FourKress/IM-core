@@ -1,19 +1,11 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { inject, ref } from 'vue'
 
 defineOptions({
   name: 'ImChatInputAction'
 })
 
-interface Props {
-  showTopAction?: boolean
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  showTopAction: true
-})
-
-console.log(props)
+const synergy = inject('synergy', false)
 
 const chatInputClass = ref('')
 const chatInputElement = ref<any>(null)
@@ -36,7 +28,7 @@ const handleInput = () => {
 
 <template>
   <div class="chat-input-action">
-    <div v-if="showTopAction" class="action-opt">
+    <div v-if="!synergy" class="action-opt">
       <div class="btn">
         <ImIcon :size="14" icon="im-icon-kuaijiehuifu" />
         <span class="label">结束咨询</span>
