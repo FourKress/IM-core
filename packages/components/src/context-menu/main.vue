@@ -1,51 +1,85 @@
 <script lang="ts" setup>
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+
 defineOptions({
   name: 'ImContextMenu'
 })
 
 interface Props {
-  visible?: boolean
+  left: number
+  top: number
+  menu: any[]
+  menuArg?: any
   closeCallBack: () => void
   submitCallBack: () => void
 }
 
+const contextMenuDom = ref<HTMLElement>()
+
 const props = withDefaults(defineProps<Props>(), {
-  visible: false,
+  left: -1000,
+  top: -1000,
   closeCallBack: () => {},
   submitCallBack: () => {}
 })
 
-console.log(props.visible)
+const positionStyle = computed(() => {
+  const { left, top } = props
+  const { clientWidth, clientHeight } = document.body
 
-const handleSubmit = () => {
-  console.log(1)
+  const spaceSize = 10
+
+  let computeLeft = left
+  let computeTop = top
+
+  const { width = 0, height = 0 } = contextMenuDom.value?.getBoundingClientRect() || {}
+
+  if (computeLeft + spaceSize * 3 + width > clientWidth) {
+    computeLeft = left - width - spaceSize
+  }
+
+  if (top + height > clientHeight) {
+    computeTop = top - height
+  }
+  return {
+    left: `${computeLeft}px`,
+    top: `${computeTop}px`
+  }
+})
+
+const handleGlobalClick = (event: Event) => {
+  handleClose()
+}
+
+onMounted(() => {
+  document.addEventListener('click', handleGlobalClick)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', handleGlobalClick)
+})
+
+const handleSubmit = (item: any) => {
+  item?.hide(props.menuArg)
+  item?.handle()
   props.submitCallBack()
 }
 const handleClose = () => {
-  console.log(2)
   props.closeCallBack()
 }
 </script>
 
 <template>
-  <div class="im-context-menu" @click="handleClose">
-    <span @click.stop="handleSubmit">im-context-menu</span>
-    <!--    <div v-if="visible" :style="position" class="context_menu-popover">-->
-    <!--      <div class="context_menu-list">-->
-    <!--        <div-->
-    <!--          v-for="(item, index) in menuList"-->
-    <!--          v-if="!item.hide || !item.hide(menuItemParams)"-->
-    <!--          :key="index"-->
-    <!--          class="context_menu-item"-->
-    <!--          @click="contextMenuSure(item)">-->
-    <!--          <LsIcon :icon="item.icon(menuItemParams)" color="#777777"></LsIcon>-->
-    <!--          <div class="label">-->
-    <!--            <Expand v-if="item.render" :render="item.render"></Expand>-->
-    <!--            <div v-if="item.label" v-html="item.label(menuItemParams)"></div>-->
-    <!--          </div>-->
-    <!--        </div>-->
-    <!--      </div>-->
-    <!--    </div>-->
+  <div ref="contextMenuDom" :style="positionStyle" class="im-context-menu">
+    <template v-for="item in menu">
+      <div
+        v-if="item?.hide(menuArg)"
+        :key="item"
+        class="menu-item"
+        @click.stop="handleSubmit(item)">
+        menu-item
+      </div>
+    </template>
   </div>
 </template>
 

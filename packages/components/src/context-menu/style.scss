@@ -2,7 +2,21 @@
   @apply fixed
   left-0
   top-0
-  w-full
-  h-full
-  bg-warning;
+  w-200px
+  bg-white
+  rd-4
+  p-8;
+
+  .menu-item {
+    @apply w-full
+    h-48px
+    line-height-32px
+    p-y-8
+    p-x-12
+    m-b-8
+    bg-warning
+    rd-4
+    cursor-pointer
+    last:m-b-0;
+  }
 }

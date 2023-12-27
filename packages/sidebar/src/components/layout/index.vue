@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { ref } from 'vue'
 
 defineOptions({
@@ -25,6 +25,33 @@ const chatLst = ref<{ name: string; id: number; time: string; value: number }[]>
     value: 0
   }
 ])
+
+const contextMenu = [
+  {
+    label: '测试1',
+    handle: () => {
+      console.log('测试1')
+    },
+    hide: (arg: number) => {
+      console.log('测试1')
+      console.log(arg, params)
+      return arg === params
+    }
+  },
+  {
+    label: '测试2',
+    handle: () => {
+      console.log('测试2')
+    },
+    hide: (arg: number) => {
+      console.log('测试2')
+      console.log(arg, params)
+      return arg === params
+    }
+  }
+]
+
+const params = 2
 </script>
 
 <template>
@@ -32,22 +59,23 @@ const chatLst = ref<{ name: string; id: number; time: string; value: number }[]>
     <div class="sidebar-header">接待</div>
     <div class="sidebar-container">
       <div
-        class="sidebar-item"
-        @click="handleSelectChat(item.id)"
-        :class="defaultSelectId === item.id && 'sidebar-active'"
         v-for="item in chatLst"
-        :key="item.id">
+        :key="item.id"
+        v-contextMenu:[item.id]="contextMenu"
+        :class="defaultSelectId === item.id && 'sidebar-active'"
+        class="sidebar-item"
+        @click="handleSelectChat(item.id)">
         <ImAvatar
-          src=""
-          :size="40"
           :badge="item.value"
           :name="item.name"
-          :tips="item.time"></ImAvatar>
+          :size="40"
+          :tips="item.time"
+          src=""></ImAvatar>
       </div>
     </div>
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @use 'style';
 </style>

@@ -1,8 +1,5 @@
 <script lang="ts" setup>
 import { inject, onMounted, ref } from 'vue'
-import { ImContextMenu } from '@im-core/components'
-
-import useCurrentInstance from '../../util'
 
 defineOptions({
   name: 'ImChatHeader'
@@ -14,26 +11,9 @@ const synergy = inject('synergy', false)
 
 const handleSelect = () => {
   isActive.value = !isActive.value
-  // const { proxy } = getCurrentInstance()
-  // proxy && proxy.$ImContextMenu()
-
-  ImContextMenu.open({
-    visible: false
-  })
-  //   .then(() => {
-  //     console.log(111)
-  //   })
-  //   .catch(() => {
-  //     console.log(22)
-  //   })
 }
 
-onMounted(() => {
-  // console.log(getCurrentInstance())
-  const { proxy } = useCurrentInstance()
-  console.log(proxy)
-  // proxy.$ImContextMenu({})
-})
+onMounted(() => {})
 </script>
 
 <template>

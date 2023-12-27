@@ -11,6 +11,10 @@ onMounted(() => {
   const el = document.documentElement
   const myColorPrimary = getComputedStyle(el).getPropertyValue(`--im-color-primary`)
   el.style.setProperty('--el-color-primary', `rgba(${myColorPrimary} / 1)`)
+
+  document.oncontextmenu = () => {
+    return false
+  }
 })
 </script>
 
